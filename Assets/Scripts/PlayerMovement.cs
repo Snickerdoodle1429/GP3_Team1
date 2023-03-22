@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody;
 
     public bool isSprinting;
-    public bool isGrounded;
     public bool isJumping;
 
     [Header("Movement Speeds")]
@@ -24,15 +23,31 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 4;
     public float gravityIntensity = -15;
 
-    void Awake()
+    [Header("Falling")]
+    public float inAirTimer;
+    public float leapingVelocity;
+    public float fallingSpeed;
+
+	[Header("Ground Check")]
+	public bool isGrounded;
+	public LayerMask whatIsGround;
+    public float playerHeight;
+
+	void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
     }
 
-    public void HandleAllMovement()
+	private void Update()
+	{
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
+    }
+
+	public void HandleAllMovement()
     {
+        HandleFalling();
         HandleMovement();
         HandleRotation();
     }
@@ -87,12 +102,38 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = playerRotation;
     }
 
+    private void HandleFalling()
+    {
+        if (!isGrounded)
+        {
+            inAirTimer = inAirTimer + Time.deltaTime;
+            playerRigidbody.AddForce(transform.forward * leapingVelocity);
+            playerRigidbody.AddForce(Vector3.down * fallingSpeed * 5);
+        }
+
+        if (isGrounded)
+        {
+            inAirTimer = 0;
+        }
+	}
+
     public void HandleJumping()
     {
-        isJumping = true;
-        float jumpingVelocity = Mathf.Sqrt(-3 * gravityIntensity * jumpHeight);
-        Vector3 playerVelocity = moveDirection;
-        playerVelocity.y = jumpingVelocity;
-        playerRigidbody.velocity = playerVelocity;
+        if (isGrounded)
+        {
+			isJumping = true;
+            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight, 0), ForceMode.Impulse);
+			Invoke("StopJump",0.5f);
+		}
+
+		// float jumpingVelocity = Mathf.Sqrt(-3 * gravityIntensity * jumpHeight);
+		// Vector3 playerVelocity = moveDirection;
+		// playerVelocity.y = jumpingVelocity;
+		// playerRigidbody.velocity = playerVelocity;
+    }
+
+    void StopJump()
+    {
+        isJumping = false;
     }
 }

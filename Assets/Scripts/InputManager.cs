@@ -33,7 +33,8 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.B.performed += i => sprintKey = true;
             playerControls.PlayerActions.B.canceled += i => sprintKey = false;
 
-			playerControls.PlayerActions.B.performed += i => jumpKey= true;
+			playerControls.PlayerActions.Jump.performed += i => jumpKey= true;
+			playerControls.PlayerActions.Jump.canceled += i => jumpKey = false;
 		}
 
         playerControls.Enable();
@@ -62,7 +63,7 @@ public class InputManager : MonoBehaviour
 
 	void HandleSprintingInput()
 	{
-		if (sprintKey && moveAmount > 0.5f)
+		if (sprintKey)
         {
             playerMovement.isSprinting = true;
         }
@@ -76,7 +77,6 @@ public class InputManager : MonoBehaviour
     {
         if (jumpKey)
         {
-            jumpKey = false;
             playerMovement.HandleJumping();
         }
     }
