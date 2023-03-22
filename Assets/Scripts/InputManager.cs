@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
+    PlayerMovement playerMovement;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -12,18 +13,28 @@ public class InputManager : MonoBehaviour
     public float cameraInputX;
     public float cameraInputY;
 
+    public float moveAmount;
     public float verticalInput;
     public float horizontalInput;
+
+    public bool sprintKey;
+    public bool jumpKey;
 
     void OnEnable()
     {
         if(playerControls == null)
         {
             playerControls = new PlayerControls();
+            playerMovement = GetComponent<PlayerMovement>();
 
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-        }
+
+            playerControls.PlayerActions.B.performed += i => sprintKey = true;
+            playerControls.PlayerActions.B.canceled += i => sprintKey = false;
+
+			playerControls.PlayerActions.B.performed += i => jumpKey= true;
+		}
 
         playerControls.Enable();
     }
@@ -36,6 +47,8 @@ public class InputManager : MonoBehaviour
     public void HandleAllInputs()
     {
         HandleMovementInput();
+        HandleSprintingInput();
+        HandleJumpingInput();
     }
 
     void HandleMovementInput()
@@ -45,5 +58,26 @@ public class InputManager : MonoBehaviour
 
         cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
+    }
+
+	void HandleSprintingInput()
+	{
+		if (sprintKey && moveAmount > 0.5f)
+        {
+            playerMovement.isSprinting = true;
+        }
+        else
+        {
+            playerMovement.isSprinting = false;
+        }
+	}
+
+    void HandleJumpingInput()
+    {
+        if (jumpKey)
+        {
+            jumpKey = false;
+            playerMovement.HandleJumping();
+        }
     }
 }
