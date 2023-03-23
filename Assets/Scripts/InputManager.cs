@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     PlayerMovement playerMovement;
+    AnimatorManager animatorManager;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -20,7 +21,12 @@ public class InputManager : MonoBehaviour
     public bool sprintKey;
     public bool jumpKey;
 
-    void OnEnable()
+	private void Awake()
+	{
+        animatorManager = GetComponent<AnimatorManager>();
+	}
+
+	void OnEnable()
     {
         if(playerControls == null)
         {
@@ -57,7 +63,10 @@ public class InputManager : MonoBehaviour
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
 
-        cameraInputY = cameraInput.y;
+        moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+        animatorManager.UpdateAnimatorValues(0, moveAmount);
+
+		cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
     }
 

@@ -22,8 +22,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpHeight = 4;
     public float gravityIntensity = -15;
+    public bool doubleJump;
+    public bool readyToJump;
+    public bool hasJumped;
+    float jumpBoost;
 
-    [Header("Falling")]
+	[Header("Falling")]
     public float inAirTimer;
     public float leapingVelocity;
     public float fallingSpeed;
@@ -42,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f, whatIsGround);
     }
 
 	public void HandleAllMovement()
@@ -57,7 +61,13 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = cameraObject.forward * inputManager.verticalInput;
         moveDirection = moveDirection + cameraObject.right * inputManager.horizontalInput;
         moveDirection.Normalize();
-        moveDirection.y = 0;
+
+        if (isGrounded)
+        {
+            moveDirection.y = 0;
+            doubleJump = true;
+            hasJumped = false;
+        }
 
         if (isSprinting)
         {
@@ -119,11 +129,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJumping()
     {
-        if (isGrounded)
+        if (isGrounded || doubleJump)
         {
 			isJumping = true;
-            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight, 0), ForceMode.Impulse);
-			Invoke("StopJump",0.5f);
+            if (hasJumped)
+            {
+                doubleJump = false;
+            }
+            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
+			Invoke("StopJump", 1);
 		}
 
 		// float jumpingVelocity = Mathf.Sqrt(-3 * gravityIntensity * jumpHeight);
@@ -134,6 +148,18 @@ public class PlayerMovement : MonoBehaviour
 
     void StopJump()
     {
-        isJumping = false;
-    }
+		hasJumped = true;
+		isJumping = false;
+		readyToJump = true;
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+        jumpBoost = 5;
+	}
+
+	private void OnCollisionExit(Collision collision)
+	{
+        jumpBoost = 1;
+	}
 }
