@@ -606,8 +606,8 @@ MonoBehaviour:
   minimumCollisionOffset: 0.2
   cameraCollisionRadius: 0.2
   cameraFollowSpeed: 0.2
-  cameraLookSpeed: 2
-  cameraPivotSpeed: 0.5
+  cameraLookSpeed: 0.13
+  cameraPivotSpeed: 0.15
   lookAngle: 0
   pivotAngle: 0
   minimumPivotAngle: -20
@@ -1065,6 +1065,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4897445970895439015, guid: 5cd2494d4d6ba9e448950a00409e4385, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0d79419f270d1a459f86e8d7d34dda9, type: 2}
+    - target: {fileID: -3828286136308985732, guid: 5cd2494d4d6ba9e448950a00409e4385, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0d79419f270d1a459f86e8d7d34dda9, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cd2494d4d6ba9e448950a00409e4385, type: 3}
       propertyPath: m_Name
       value: barrel
@@ -1298,6 +1306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e5347ac7055f64d44ae8afc8ab8fbbed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2899b33671156af4ba52babb9dc33f36, type: 2}
     - target: {fileID: 919132149155446097, guid: e5347ac7055f64d44ae8afc8ab8fbbed, type: 3}
       propertyPath: m_Name
       value: Chest
