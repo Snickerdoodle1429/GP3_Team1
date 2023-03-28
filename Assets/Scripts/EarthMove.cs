@@ -46,6 +46,6 @@ public class EarthMove : MonoBehaviour
     void EarthFall()
     {
 		StartCoroutine(MoveEarth(endPosition));
-        Destroy(gameObject, moveDuration + 1);
+        Destroy(gameObject, moveDuration + 0.5f);
 	}
 }

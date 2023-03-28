@@ -208,7 +208,7 @@
             "id": "12b7dbad-ff9b-4290-85dc-1da76a0109d2",
             "actions": [
                 {
-                    "name": "B",
+                    "name": "Sprint",
                     "type": "Button",
                     "id": "2de73b89-855b-492a-86f0-3634aa93e1bf",
                     "expectedControlType": "Button",
@@ -243,7 +243,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "B",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -254,7 +254,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "B",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

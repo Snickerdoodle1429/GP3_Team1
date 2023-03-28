@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     InputManager inputManager;
+    PlayerManager playerManager;
+    public AnimatorManager animatorManager;
     
     private Vector3 moveDirection;
     Transform cameraObject;
     Rigidbody playerRigidbody;
 
+    [Header("Movement")]
     public bool isSprinting;
     public bool isJumping;
 
@@ -20,17 +23,13 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 15;
 
     [Header("Jump")]
-    public float jumpHeight = 1;
-    public float gravityIntensity = -15;
-    public bool doubleJump;
-    public bool readyToJump;
-    public bool hasJumped;
-    public float jumpBoost;
+	public float jumpHeight = 3;
+	public float gravityIntensity = -15;
 
 	[Header("Falling")]
     public float inAirTimer;
-    public float leapingVelocity = 5;
-    public float fallingSpeed = 100;
+    public float leapingVelocity;
+    public float fallingSpeed;
 
 	[Header("Ground Check")]
 	public bool isGrounded;
@@ -39,16 +38,23 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Earth Ability")]
     public LayerMask validEarth;
-    public bool canSummon;
+    public bool canSummonEarth;
     Vector3 lookDirection;
     public GameObject summonPoint;
     SummonEarth summonEarth;
+
+    [Header("Old Double Jump")]
+    public bool doubleJump;
+    public bool readyToJump;
+    public bool hasJumped;
+    public float jumpBoost;
 
 	void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
+        animatorManager = GetComponent<AnimatorManager>();
     }
 
 	private void Update()
@@ -121,24 +127,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFalling()
     {
-        if (!isGrounded)
+        if (!isGrounded && !isJumping)
         {
             inAirTimer = inAirTimer + Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * leapingVelocity);
-            playerRigidbody.AddForce(Vector3.down * fallingSpeed * 5);
+            playerRigidbody.AddForce(Vector3.down * fallingSpeed * inAirTimer);
         }
 
         if (isGrounded)
         {
             inAirTimer = 0;
-        }
+			animatorManager.animator.SetBool("isJumping", false);
+		}
 	}
 
-    public void HandleJumping()
+    public void OldHandleJumping()
     {
         if (isGrounded || doubleJump)
         {
-			isJumping = true;
             if (hasJumped)
             {
                 doubleJump = false;
@@ -147,19 +153,38 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
 			Invoke("StopJump", 1);
 		}
-
-		// float jumpingVelocity = Mathf.Sqrt(-3 * gravityIntensity * jumpHeight);
-		// Vector3 playerVelocity = moveDirection;
-		// playerVelocity.y = jumpingVelocity;
-		// playerRigidbody.velocity = playerVelocity;
     }
+
+    public void HandleJumping()
+    {
+        Debug.Log("Jump Recieve");
+
+		if (isGrounded)
+        {
+            Debug.Log("Jump Activate");
+            animatorManager.animator.SetBool("isJumping", true);
+
+			#region Stand In Jump
+			playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
+			Invoke("StopJump", 1);
+			#endregion
+
+			#region Actual Jump
+			// float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+			// Vector3 playerVelocity = moveDirection;
+			// playerVelocity.y = jumpingVelocity;
+			// playerRigidbody.velocity = playerVelocity;
+			// animatorManager.PlayTargetAnimation("Jump", false);
+			#endregion
+		}
+	}
 
     void StopJump()
     {
-		hasJumped = true;
-		isJumping = false;
-		readyToJump = true;
-	}
+        hasJumped = true;
+        isJumping = false;
+        readyToJump = true;
+    }
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -173,12 +198,28 @@ public class PlayerMovement : MonoBehaviour
 
     public void EarthActivate()
     {
-		RaycastHit hit;
-		canSummon = Physics.Raycast(transform.position, Vector3.forward , out hit, 5, validEarth);
+        Debug.Log("Earth Recieved");
 
-        if (canSummon)
+        RaycastHit hit;
+        canSummonEarth = Physics.Raycast(transform.position, Vector3.forward, out hit, 5f, validEarth);
+
+        if(canSummonEarth)
+		{
+            Debug.Log("Earth Activate");
+            Vector3 relocate = hit.transform.position;
+            summonPoint.transform.position = relocate;
+			summonEarth.ActivateAbility();
+		}
+	}
+
+	public void OldEarthActivate()
+    {
+        Debug.Log("Recieved");
+		//canSummon = Physics.Raycast(transform.position, Vector3.forward, 5, validEarth);
+
+       // if (canSummon)
         {
-            Debug.Log("Recieved");
+            Debug.Log("Hit");
 			//summonPoint.transform.position = hit.transform.position;
             summonEarth.ActivateAbility();
 		}

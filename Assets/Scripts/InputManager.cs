@@ -38,8 +38,8 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
 
-            playerControls.PlayerActions.B.performed += i => sprintKey = true;
-            playerControls.PlayerActions.B.canceled += i => sprintKey = false;
+            playerControls.PlayerActions.Sprint.performed += i => sprintKey = true;
+            playerControls.PlayerActions.Sprint.canceled += i => sprintKey = false;
 
 			playerControls.PlayerActions.Jump.performed += i => jumpKey= true;
 			playerControls.PlayerActions.Jump.canceled += i => jumpKey = false;
@@ -92,8 +92,10 @@ public class InputManager : MonoBehaviour
     {
         if (jumpKey)
         {
+            Debug.Log("Jump Sent");
             playerMovement.HandleJumping();
-        }
+			jumpKey = false;
+		}
     }
 
     void HandleEarthAbility()
@@ -102,6 +104,7 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Sent");
             playerMovement.EarthActivate();
+            earthKey = false;
         }
     }
 }

@@ -230,7 +230,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""12b7dbad-ff9b-4290-85dc-1da76a0109d2"",
             ""actions"": [
                 {
-                    ""name"": ""B"",
+                    ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""2de73b89-855b-492a-86f0-3634aa93e1bf"",
                     ""expectedControlType"": ""Button"",
@@ -265,7 +265,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""B"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -276,7 +276,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""B"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -335,7 +335,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
-        m_PlayerActions_B = m_PlayerActions.FindAction("B", throwIfNotFound: true);
+        m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Earth = m_PlayerActions.FindAction("Earth", throwIfNotFound: true);
     }
@@ -438,14 +438,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // PlayerActions
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
-    private readonly InputAction m_PlayerActions_B;
+    private readonly InputAction m_PlayerActions_Sprint;
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Earth;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @B => m_Wrapper.m_PlayerActions_B;
+        public InputAction @Sprint => m_Wrapper.m_PlayerActions_Sprint;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Earth => m_Wrapper.m_PlayerActions_Earth;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
@@ -457,9 +457,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsActionsCallbackInterface != null)
             {
-                @B.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnB;
-                @B.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnB;
-                @B.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnB;
+                @Sprint.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSprint;
                 @Jump.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
@@ -470,9 +470,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @B.started += instance.OnB;
-                @B.performed += instance.OnB;
-                @B.canceled += instance.OnB;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
@@ -490,7 +490,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IPlayerActionsActions
     {
-        void OnB(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnEarth(InputAction.CallbackContext context);
     }

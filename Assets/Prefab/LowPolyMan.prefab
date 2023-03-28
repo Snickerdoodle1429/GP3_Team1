@@ -2724,15 +2724,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d944a9303e0164551b9d1896b6540479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorManager: {fileID: 118979478072814114}
   isSprinting: 0
   isJumping: 0
   walkingSpeed: 1.5
   runningSpeed: 3
   sprintingSpeed: 5
   rotationSpeed: 15
-  jumpHeight: 5
+  jumpHeight: 3
   gravityIntensity: -15
-  doubleJump: 0
   inAirTimer: 0
   leapingVelocity: 5
   fallingSpeed: 50
@@ -2741,6 +2741,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   playerHeight: 3.6
+  validEarth:
+    serializedVersion: 2
+    m_Bits: 512
+  canSummon: 0
+  summonPoint: {fileID: 0}
+  doubleJump: 0
+  readyToJump: 0
+  hasJumped: 0
+  jumpBoost: 0
 --- !u!114 &5595226982751849170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2774,6 +2783,7 @@ MonoBehaviour:
   horizontalInput: 0
   sprintKey: 0
   jumpKey: 0
+  earthKey: 0
 --- !u!114 &118979478072814114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,6 +2796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b420dd54f98b4860aaed33f4a8b954f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &6152268480808521476
 GameObject:
   m_ObjectHideFlags: 0
