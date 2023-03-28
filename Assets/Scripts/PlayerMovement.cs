@@ -15,27 +15,27 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement Speeds")]
     public float walkingSpeed = 1.5f;
-    public float runningSpeed = 5;
-    public float sprintingSpeed = 7;
+    public float runningSpeed = 3;
+    public float sprintingSpeed = 5;
     public float rotationSpeed = 15;
 
     [Header("Jump")]
-    public float jumpHeight = 4;
+    public float jumpHeight = 1;
     public float gravityIntensity = -15;
     public bool doubleJump;
     public bool readyToJump;
     public bool hasJumped;
-    float jumpBoost;
+    public float jumpBoost;
 
 	[Header("Falling")]
     public float inAirTimer;
-    public float leapingVelocity;
-    public float fallingSpeed;
+    public float leapingVelocity = 5;
+    public float fallingSpeed = 100;
 
 	[Header("Ground Check")]
 	public bool isGrounded;
 	public LayerMask whatIsGround;
-    public float playerHeight;
+    public float playerHeight = 3.6f;
 
 	void Awake()
     {
@@ -136,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 doubleJump = false;
             }
+
             playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
 			Invoke("StopJump", 1);
 		}
