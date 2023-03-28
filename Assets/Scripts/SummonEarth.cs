@@ -6,11 +6,9 @@ public class SummonEarth : MonoBehaviour
 {
     public GameObject cubePrefab;
 
-    void Update()
+    public void ActivateAbility()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Instantiate(cubePrefab, transform.position, Quaternion.identity);
-		}
+        Debug.Log("Activated");
+        Instantiate(cubePrefab, transform.position, Quaternion.identity);
     }
 }

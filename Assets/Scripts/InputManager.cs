@@ -21,6 +21,8 @@ public class InputManager : MonoBehaviour
     public bool sprintKey;
     public bool jumpKey;
 
+    public bool earthKey;
+
 	private void Awake()
 	{
         animatorManager = GetComponent<AnimatorManager>();
@@ -41,6 +43,9 @@ public class InputManager : MonoBehaviour
 
 			playerControls.PlayerActions.Jump.performed += i => jumpKey= true;
 			playerControls.PlayerActions.Jump.canceled += i => jumpKey = false;
+
+			playerControls.PlayerActions.Earth.performed += i => earthKey = true;
+			playerControls.PlayerActions.Earth.canceled += i => earthKey = false;
 		}
 
         playerControls.Enable();
@@ -56,9 +61,10 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintingInput();
         HandleJumpingInput();
-    }
+        HandleEarthAbility();
+	}
 
-    void HandleMovementInput()
+	void HandleMovementInput()
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
@@ -87,6 +93,15 @@ public class InputManager : MonoBehaviour
         if (jumpKey)
         {
             playerMovement.HandleJumping();
+        }
+    }
+
+    void HandleEarthAbility()
+    {
+        if (earthKey)
+        {
+            Debug.Log("Sent");
+            playerMovement.EarthActivate();
         }
     }
 }

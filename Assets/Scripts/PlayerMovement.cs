@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
 	public LayerMask whatIsGround;
     public float playerHeight = 3.6f;
 
+    [Header("Earth Ability")]
+    public LayerMask validEarth;
+    public bool canSummon;
+    Vector3 lookDirection;
+    public GameObject summonPoint;
+    SummonEarth summonEarth;
+
 	void Awake()
     {
         inputManager = GetComponent<InputManager>();
@@ -162,5 +169,18 @@ public class PlayerMovement : MonoBehaviour
 	private void OnCollisionExit(Collision collision)
 	{
         jumpBoost = 1;
+	}
+
+    public void EarthActivate()
+    {
+		RaycastHit hit;
+		canSummon = Physics.Raycast(transform.position, Vector3.forward , out hit, 5, validEarth);
+
+        if (canSummon)
+        {
+            Debug.Log("Recieved");
+			//summonPoint.transform.position = hit.transform.position;
+            summonEarth.ActivateAbility();
+		}
 	}
 }
