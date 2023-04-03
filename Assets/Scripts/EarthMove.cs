@@ -5,17 +5,20 @@ using UnityEngine;
 public class EarthMove : MonoBehaviour
 {
     public float timeElapsed;
-    public float moveDuration = 3;
-    public float moveValue = 3;
+    public float moveDuration = 5;
+    public float moveValue = 10;
 
     public bool inPlace;
     Vector3 endPosition;
 
     public GameObject earthChunk;
+    Rigidbody earthRigid;
 
-	private void Start()
+    private void Start()
 	{
         endPosition = transform.position;
+        earthRigid = GetComponent<Rigidbody>();
+        Physics.IgnoreLayerCollision(6, 7);
         EarthAbility();
 	}
 
@@ -40,12 +43,12 @@ public class EarthMove : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        Invoke("EarthFall", 3);
+        Invoke("EarthFall", moveDuration);
     }
 
     void EarthFall()
     {
 		StartCoroutine(MoveEarth(endPosition));
-        Destroy(gameObject, moveDuration + 0.5f);
+        Destroy(gameObject, moveDuration);
 	}
 }
