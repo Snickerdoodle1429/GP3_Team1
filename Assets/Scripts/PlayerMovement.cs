@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	InputManager inputManager;
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
+    public Animator animator;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -168,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpsRemaining -= 1;
 
-            //animatorManager.animator.SetBool("isJumping", true);
+            animatorManager.animator.SetBool("isJumping", true);
 
             #region Stand In Jump
             playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
@@ -182,7 +183,6 @@ public class PlayerMovement : MonoBehaviour
             //playerRigidbody.velocity = playerVelocity;
             #endregion
 
-            //animatorManager.PlayTargetAnimation("Jump", false);
         }
     }
 
@@ -191,6 +191,7 @@ public class PlayerMovement : MonoBehaviour
         hasJumped = true;
         isJumping = false;
         readyToJump = true;
+        animatorManager.animator.SetBool("isJumping", false);
     }
 
     public void OldEarthActivate()
