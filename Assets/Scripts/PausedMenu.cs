@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PausedMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
+    public GameObject pausedMenu;
     public static bool isPaused;
     public AudioSource audioSource;
+    public GameObject crosshairs;
 
     void Start()
     {
-        pauseMenu.SetActive(false);
+        pausedMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
+        crosshairs.SetActive(true);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            if(isPaused)
+            if (isPaused)
             {
                 ResumeGame();
             }
+
             else
             {
                 PauseGame();
@@ -33,9 +36,16 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
+        Debug.Log("Paused");
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        pausedMenu.SetActive(true);
+
         Time.timeScale = 0f;
         isPaused = true;
+        crosshairs.SetActive(false);
 
         PlayerMovement controller = GetComponent<PlayerMovement>();
         audioSource.Pause();
@@ -43,16 +53,21 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
+        Debug.Log("Unpaused");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pausedMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        crosshairs.SetActive(true);
 
         audioSource.Play(0);
     }
 
-    public void MainMenu()
+    public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("MainMenu");
         isPaused = false;
     }
 
