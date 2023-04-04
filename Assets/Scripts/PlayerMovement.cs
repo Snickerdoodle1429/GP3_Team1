@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Earth Ability")]
     public LayerMask validEarth;
     public bool canSummonEarth;
+    public bool earthCollide;
     Vector3 lookDirection;
     public GameObject summonPoint;
     public SummonEarth summonEarth;
@@ -197,22 +198,31 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Earth Recieved");
 
         RaycastHit hit;
-        canSummonEarth = Physics.Raycast(transform.position, Vector3.forward, out hit, 5f, validEarth);
+        earthCollide = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f);
 
-        if (canSummonEarth)
+        if (earthCollide)
         {
-            Debug.Log("Earth Activate");
-            Vector3 relocate = hit.transform.position;
-            summonPoint.transform.position = relocate;
-            summonEarth.ActivateAbility();
+            Debug.Log("Earth Hit");
+
+            if (hit.collider.CompareTag("validEarth"))
+            {
+                Debug.Log("Earth Activate");
+                Vector3 relocate = hit.transform.position;
+                summonPoint.transform.position = relocate;
+                summonEarth.ActivateAbility();
+            }
         }
     }
 
+	#region Collisions 
 	public void OnCollisionStay(Collision collision)
 	{
 		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
         {
             isGrounded = true;
+            Vector3 relocate = collision.gameObject.transform.position;
+            relocate.y = relocate.y - 2;
+            summonPoint.transform.position = relocate;
         }
 	}
 
@@ -249,15 +259,15 @@ public class PlayerMovement : MonoBehaviour
             jumpBoost = 3;
         }
     }
+	#endregion
 
-    public void EarthActivate()
+	public void EarthActivate()
     {
        Debug.Log("Earth Recieved");
 
        if (canSummonEarth)
         {
             Debug.Log("Hit");
-			//summonPoint.transform.position = hit.transform.position;
             summonEarth.ActivateAbility();
 		}
 	}
