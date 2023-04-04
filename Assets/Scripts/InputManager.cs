@@ -94,6 +94,7 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Jump Sent");
             playerMovement.HandleJumping();
+            animatorManager.animator.SetBool("isJumping", true);
 			jumpKey = false;
 		}
     }

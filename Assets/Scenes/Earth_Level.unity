@@ -292,13 +292,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: pyram_low
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fb740da77b6148408d3efc56ae6daec, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 7907500220359696488, guid: 3fb740da77b6148408d3efc56ae6daec, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7907500220359696488, guid: 3fb740da77b6148408d3efc56ae6daec, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 8955109743617132276, guid: 3fb740da77b6148408d3efc56ae6daec, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955109743617132276, guid: 3fb740da77b6148408d3efc56ae6daec, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -355,9 +367,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -373,7 +393,7 @@ GameObject:
   - component: {fileID: 177205498}
   m_Layer: 0
   m_Name: Small Pillar
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -458,9 +478,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -522,9 +550,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -595,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbig
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -655,9 +695,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -723,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbig (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -778,9 +830,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -858,6 +918,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_Name
       value: pillarbig (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1329,6 +1393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbig (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -1564,9 +1632,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1713,9 +1789,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1763,6 +1847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 907497018}
+  animator: {fileID: 0}
   playerCapsule: {fileID: 907497020}
   isSprinting: 0
   isJumping: 0
@@ -1770,13 +1855,13 @@ MonoBehaviour:
   runningSpeed: 3
   sprintingSpeed: 5
   rotationSpeed: 15
-  jumpHeight: 3
-  gravityIntensity: -15
+  jumpHeight: 10
+  gravityIntensity: -5
   maxJumps: 1
   jumpsRemaining: 0
   inAirTimer: 0
-  leapingVelocity: 0
-  fallingSpeed: 0
+  leapingVelocity: 5
+  fallingSpeed: 300
   isGrounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -1787,8 +1872,8 @@ MonoBehaviour:
     m_Bits: 512
   canSummonEarth: 0
   earthCollide: 0
-  summonPoint: {fileID: 0}
-  summonEarth: {fileID: 0}
+  summonPoint: {fileID: 4118283457352230953, guid: e8fb3981d42491a4ab742bcabbd560d9, type: 3}
+  summonEarth: {fileID: 4118283457352230952, guid: e8fb3981d42491a4ab742bcabbd560d9, type: 3}
   doubleJump: 0
   readyToJump: 0
   hasJumped: 0
@@ -1839,7 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b420dd54f98b4860aaed33f4a8b954f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 907497014}
 --- !u!54 &907497019
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1853,9 +1938,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &907497020
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1922,6 +2007,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -2000,9 +2089,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2067,6 +2164,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_Name
       value: pillarbig (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2159,9 +2260,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2306,6 +2415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbig
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -2408,9 +2521,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2431,7 +2552,7 @@ GameObject:
   - component: {fileID: 1349866000}
   m_Layer: 0
   m_Name: Medium Pillar
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2590,9 +2711,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2776,9 +2905,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2848,9 +2985,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2979,6 +3124,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -24.036
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -3042,6 +3191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbase
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 52cff4902e94ac44fb8f97b7cad43463, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 5794770539029468478, guid: 52cff4902e94ac44fb8f97b7cad43463, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -3101,9 +3254,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3165,9 +3326,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3243,9 +3412,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3310,6 +3487,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_Name
       value: pillarbig (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3389,9 +3570,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -329120040828439595, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
       value: pillarmed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     - target: {fileID: 2270181118833908033, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3489,6 +3678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pillarbig (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfad65d053609642a4d55810f899429, type: 3}
@@ -3549,9 +3742,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7443209559336030276, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
       propertyPath: m_Name
       value: pillarsmall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2de0db59ff947cd49b994db1d6c071fc, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4240,6 +4441,10 @@ PrefabInstance:
     - target: {fileID: -2010551322004416881, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2bfad65d053609642a4d55810f899429, type: 3}
+      propertyPath: m_TagString
+      value: whatIsGround
       objectReference: {fileID: 0}
     - target: {fileID: 4221789460906169063, guid: 2bfad65d053609642a4d55810f899429, type: 3}
       propertyPath: m_Materials.Array.data[0]
