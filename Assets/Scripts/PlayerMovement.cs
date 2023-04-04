@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    InputManager inputManager;
+	#region Inputs
+	InputManager inputManager;
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
 
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpHeight = 3;
     public float gravityIntensity = -15;
+    public int maxJumps = 1;
+    public int jumpsRemaining = 0;
 
     [Header("Falling")]
     public float inAirTimer;
@@ -48,20 +51,16 @@ public class PlayerMovement : MonoBehaviour
     public bool doubleJump;
     public bool readyToJump;
     public bool hasJumped;
-    public float jumpBoost = 1;
+    public float jumpBoost = 3;
+	#endregion
 
-    void Awake()
+	void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
         animatorManager = GetComponent<AnimatorManager>();
         playerCapsule = GetComponent<CapsuleCollider>();
-    }
-
-    private void Update()
-    {
-        isGrounded = Physics.Raycast(playerCapsule.transform.position, Vector3.down, 0.1f, whatIsGround);
     }
 
     public void HandleAllMovement()
@@ -133,12 +132,13 @@ public class PlayerMovement : MonoBehaviour
         {
             inAirTimer = inAirTimer + Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * leapingVelocity);
-            playerRigidbody.AddForce(Vector3.down * fallingSpeed);
+            playerRigidbody.AddForce(Vector3.down * fallingSpeed * inAirTimer * 2);
         }
 
         if (isGrounded)
         {
             inAirTimer = 0;
+            jumpsRemaining = maxJumps;
             animatorManager.animator.SetBool("isJumping", false);
         }
     }
@@ -161,13 +161,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Jump Recieve");
 
-        if (isGrounded)
+        if (jumpsRemaining > 0)
         {
             Debug.Log("Jump Activate");
+            isJumping = true;
+            jumpsRemaining -= 1;
+
             //animatorManager.animator.SetBool("isJumping", true);
 
             #region Stand In Jump
-            isJumping = true;
             playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
             Invoke("StopJump", 2);
             #endregion
@@ -177,8 +179,9 @@ public class PlayerMovement : MonoBehaviour
             //Vector3 playerVelocity = moveDirection;
             //playerVelocity.y = jumpingVelocity;
             //playerRigidbody.velocity = playerVelocity;
-            //animatorManager.PlayTargetAnimation("Jump", false);
             #endregion
+
+            //animatorManager.PlayTargetAnimation("Jump", false);
         }
     }
 
@@ -187,16 +190,6 @@ public class PlayerMovement : MonoBehaviour
         hasJumped = true;
         isJumping = false;
         readyToJump = true;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        jumpBoost = 1;
     }
 
     public void OldEarthActivate()
@@ -215,7 +208,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider trigger)
+	public void OnCollisionStay(Collision collision)
+	{
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+        {
+            isGrounded = true;
+        }
+	}
+
+	public void OnCollisionExit(Collision collision)
+	{
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+		{
+			isGrounded = false;
+		}
+	}
+
+	public void OnTriggerEnter(Collider trigger)
     {
         if (trigger.GetComponent<Collider>().tag == "validEarth")
         {
@@ -224,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (trigger.GetComponent<Collider>().tag == "boost")
         {
-            jumpBoost = 5;
+            jumpBoost = 6;
         }
     }
 
@@ -237,7 +246,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (trigger.GetComponent<Collider>().tag == "boost")
         {
-            jumpBoost = 1;
+            jumpBoost = 3;
         }
     }
 

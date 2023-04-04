@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8056200271073534238}
   m_Layer: 7
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 8056200271093724224}
   m_Layer: 7
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 8056200271100351422}
   m_Layer: 7
   m_Name: Cube (13)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 8056200271157375567}
   m_Layer: 7
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 8056200271171893677}
   m_Layer: 7
   m_Name: Cylinder (7)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 8056200271175320072}
   m_Layer: 7
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 8056200271206307785}
   m_Layer: 7
   m_Name: Cube (15)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 8056200271226686864}
   m_Layer: 7
   m_Name: Cube (14)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 8056200271324805913}
   m_Layer: 7
   m_Name: Cylinder (6)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 8056200271328235413}
   m_Layer: 7
   m_Name: Cylinder (2)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 8056200271378894872}
   m_Layer: 7
   m_Name: Cylinder (11)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 8056200271522001575}
   m_Layer: 7
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 8056200271640887257}
   m_Layer: 7
   m_Name: Cylinder (14)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1282,7 +1282,7 @@ GameObject:
   - component: {fileID: 8056200271686606353}
   m_Layer: 7
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 8056200271691369341}
   m_Layer: 7
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1476,7 +1476,7 @@ GameObject:
   - component: {fileID: 8056200271697932196}
   m_Layer: 7
   m_Name: Cylinder (10)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1574,7 +1574,7 @@ GameObject:
   - component: {fileID: 8056200271709341356}
   m_Layer: 7
   m_Name: Cylinder (5)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1672,7 +1672,7 @@ GameObject:
   - component: {fileID: 8056200271726649386}
   m_Layer: 7
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 8056200271912474026}
   m_Layer: 7
   m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 8056200271941168279}
   m_Layer: 7
   m_Name: Cylinder (12)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1966,7 +1966,7 @@ GameObject:
   - component: {fileID: 8056200271962832659}
   m_Layer: 7
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2063,7 +2063,7 @@ GameObject:
   - component: {fileID: 8056200272114705444}
   m_Layer: 7
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2160,7 +2160,7 @@ GameObject:
   - component: {fileID: 8056200272325891390}
   m_Layer: 7
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2257,7 +2257,7 @@ GameObject:
   - component: {fileID: 8056200272516485175}
   m_Layer: 7
   m_Name: Cylinder (15)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2355,7 +2355,7 @@ GameObject:
   - component: {fileID: 8056200272518087567}
   m_Layer: 7
   m_Name: Cube (16)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2449,7 +2449,7 @@ GameObject:
   - component: {fileID: 8056200272576179760}
   m_Layer: 7
   m_Name: Obstacles
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2518,7 +2518,7 @@ GameObject:
   - component: {fileID: 8056200272608339720}
   m_Layer: 7
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,7 +2615,7 @@ GameObject:
   - component: {fileID: 8056200272651504288}
   m_Layer: 7
   m_Name: Cylinder (9)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2713,7 +2713,7 @@ GameObject:
   - component: {fileID: 8056200272662577170}
   m_Layer: 7
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2810,7 +2810,7 @@ GameObject:
   - component: {fileID: 8056200272714399898}
   m_Layer: 7
   m_Name: Cylinder (4)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2908,7 +2908,7 @@ GameObject:
   - component: {fileID: 8056200272747400210}
   m_Layer: 7
   m_Name: Cylinder (16)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3006,7 +3006,7 @@ GameObject:
   - component: {fileID: 8056200272756143811}
   m_Layer: 7
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3103,7 +3103,7 @@ GameObject:
   - component: {fileID: 8056200273048416557}
   m_Layer: 7
   m_Name: Cylinder (8)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3201,7 +3201,7 @@ GameObject:
   - component: {fileID: 8056200273086699743}
   m_Layer: 7
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3298,7 +3298,7 @@ GameObject:
   - component: {fileID: 8056200273124701360}
   m_Layer: 7
   m_Name: Cylinder (13)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 8056200273130467510}
   m_Layer: 7
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: whatIsGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
