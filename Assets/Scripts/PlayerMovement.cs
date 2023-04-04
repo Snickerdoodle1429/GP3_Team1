@@ -63,9 +63,13 @@ public class PlayerMovement : MonoBehaviour
         cameraObject = Camera.main.transform;
         animatorManager = GetComponent<AnimatorManager>();
         playerCapsule = GetComponent<CapsuleCollider>();
-    }
 
-    public void HandleAllMovement()
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
+
+	#region Movement
+	public void HandleAllMovement()
     {
         HandleFalling();
         HandleMovement();
@@ -193,8 +197,71 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         animatorManager.animator.SetBool("isJumping", false);
     }
+	#endregion
 
-    public void OldEarthActivate()
+	#region Collisions
+	public void OnCollisionStay(Collision collision)
+	{
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+		{
+			isGrounded = true;
+			Vector3 relocate = collision.gameObject.transform.position;
+			relocate.y = relocate.y - 2;
+			summonPoint.transform.position = relocate;
+		}
+	}
+
+	public void OnCollisionExit(Collision collision)
+	{
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+		{
+			isGrounded = false;
+		}
+	}
+
+	public void OnTriggerEnter(Collider trigger)
+	{
+		if (trigger.GetComponent<Collider>().tag == "validEarth")
+		{
+			canSummonEarth = true;
+		}
+
+		if (trigger.GetComponent<Collider>().tag == "boost")
+		{
+			jumpBoost = 6;
+		}
+
+        if (trigger.GetComponent<Collider>().tag == "mask")
+        {
+            trigger.gameObject.SetActive(false);
+        }
+	}
+
+	public void OnTriggerExit(Collider trigger)
+	{
+		if (trigger.GetComponent<Collider>().tag == "validEarth")
+		{
+			canSummonEarth = false;
+		}
+
+		if (trigger.GetComponent<Collider>().tag == "boost")
+		{
+			jumpBoost = 3;
+		}
+	}
+	#endregion
+
+	public void EarthActivate()
+	{
+		Debug.Log("Earth Recieved");
+
+		if (canSummonEarth)
+		{
+			Debug.Log("Hit");
+			summonEarth.ActivateAbility();
+		}
+	}
+	public void OldEarthActivate()
     {
         Debug.Log("Earth Recieved");
 
@@ -215,61 +282,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-	#region Collisions 
-	public void OnCollisionStay(Collision collision)
-	{
-		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
-        {
-            isGrounded = true;
-            Vector3 relocate = collision.gameObject.transform.position;
-            relocate.y = relocate.y - 2;
-            summonPoint.transform.position = relocate;
-        }
-	}
-
-	public void OnCollisionExit(Collision collision)
-	{
-		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
-		{
-			isGrounded = false;
-		}
-	}
-
-	public void OnTriggerEnter(Collider trigger)
-    {
-        if (trigger.GetComponent<Collider>().tag == "validEarth")
-        {
-            canSummonEarth = true;
-        }
-
-        if (trigger.GetComponent<Collider>().tag == "boost")
-        {
-            jumpBoost = 6;
-        }
-    }
-
-    public void OnTriggerExit(Collider trigger)
-    {
-        if (trigger.GetComponent<Collider>().tag == "validEarth")
-        {
-            canSummonEarth = false;
-        }
-
-        if (trigger.GetComponent<Collider>().tag == "boost")
-        {
-            jumpBoost = 3;
-        }
-    }
-	#endregion
-
-	public void EarthActivate()
-    {
-       Debug.Log("Earth Recieved");
-
-       if (canSummonEarth)
-        {
-            Debug.Log("Hit");
-            summonEarth.ActivateAbility();
-		}
-	}
+	
+	
 }

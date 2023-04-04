@@ -18,21 +18,20 @@ public class PausedMenu : MonoBehaviour
         crosshairs.SetActive(true);
     }
 
-    void Update()
+    public void PauseButton()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
+		Debug.Log("Pause");
 
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
+		if (isPaused)
+		{
+			ResumeGame();
+		}
+
+		else
+		{
+			PauseGame();
+		}
+	}
 
     public void PauseGame()
     {

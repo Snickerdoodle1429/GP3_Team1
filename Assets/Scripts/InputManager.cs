@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     PlayerControls playerControls;
     PlayerMovement playerMovement;
     AnimatorManager animatorManager;
+    PausedMenu pausedMenu;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -20,12 +21,14 @@ public class InputManager : MonoBehaviour
 
     public bool sprintKey;
     public bool jumpKey;
+    public bool pauseKey;
 
     public bool earthKey;
 
 	private void Awake()
 	{
         animatorManager = GetComponent<AnimatorManager>();
+        pausedMenu = FindObjectOfType<PausedMenu>();
 	}
 
 	void OnEnable()
@@ -46,6 +49,9 @@ public class InputManager : MonoBehaviour
 
 			playerControls.PlayerActions.Earth.performed += i => earthKey = true;
 			playerControls.PlayerActions.Earth.canceled += i => earthKey = false;
+
+			playerControls.PlayerActions.Pause.performed += i => pauseKey = true;
+			playerControls.PlayerActions.Pause.canceled += i => pauseKey = false;
 		}
 
         playerControls.Enable();
@@ -62,6 +68,7 @@ public class InputManager : MonoBehaviour
         HandleSprintingInput();
         HandleJumpingInput();
         HandleEarthAbility();
+        HandlePause();
 	}
 
 	void HandleMovementInput()
@@ -70,7 +77,7 @@ public class InputManager : MonoBehaviour
         horizontalInput = movementInput.x;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animatorManager.UpdateAnimatorValues(0, moveAmount);
+        animatorManager.UpdateAnimatorValues(0, moveAmount, playerMovement.isSprinting);
 
 		cameraInputY = cameraInput.y;
         cameraInputX = cameraInput.x;
@@ -106,6 +113,16 @@ public class InputManager : MonoBehaviour
             Debug.Log("Sent");
             playerMovement.EarthActivate();
             earthKey = false;
+        }
+    }
+
+    void HandlePause()
+    {
+        if (pauseKey)
+        {
+            Debug.Log("Pausing...");
+            pausedMenu.PauseButton();
+            pauseKey = false;
         }
     }
 }
