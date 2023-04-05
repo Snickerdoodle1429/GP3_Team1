@@ -248,8 +248,13 @@ public class PlayerMovement : MonoBehaviour
 
 		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
         {
-            //SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("Art Area");
         }
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadSceneEarth")
+		{
+			SceneManager.LoadScene("Earth_Level");
+		}
 	}
 
 	public void OnTriggerExit(Collider trigger)
