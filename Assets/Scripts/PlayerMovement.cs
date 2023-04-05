@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
     public Animator animator;
+    Checkpoints checkpoints;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -63,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         cameraObject = Camera.main.transform;
         animatorManager = GetComponent<AnimatorManager>();
         playerCapsule = GetComponent<CapsuleCollider>();
+        checkpoints = GetComponent<Checkpoints>();
 
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
@@ -235,6 +239,17 @@ public class PlayerMovement : MonoBehaviour
         {
             trigger.gameObject.SetActive(false);
         }
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
+		{
+			Debug.Log("Respawn");
+			transform.position = checkpoints.respawnPoint.transform.position;
+		}
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
+        {
+            //SceneManager.LoadScene("Hub");
+        }
 	}
 
 	public void OnTriggerExit(Collider trigger)
@@ -261,7 +276,8 @@ public class PlayerMovement : MonoBehaviour
 			summonEarth.ActivateAbility();
 		}
 	}
-	public void OldEarthActivate()
+
+    public void OldEarthActivate()
     {
         Debug.Log("Earth Recieved");
 
