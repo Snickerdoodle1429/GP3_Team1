@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528267221700608010}
   - component: {fileID: 4880726993347582776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8365669663923487520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FX Sparkle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 6740709763818651002}
   - component: {fileID: 1884996487336563716}
   - component: {fileID: 2262001008378055341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle Sparkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
