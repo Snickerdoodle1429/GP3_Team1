@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
-    InputManager inputManager;
+	#region Inputs
+	InputManager inputManager;
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
-    
+    public Animator animator;
+    Checkpoints checkpoints;
+
     private Vector3 moveDirection;
     Transform cameraObject;
     Rigidbody playerRigidbody;
+    public Collider playerCapsule;
 
     [Header("Movement")]
     public bool isSprinting;
@@ -23,31 +29,35 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 15;
 
     [Header("Jump")]
-	public float jumpHeight = 3;
-	public float gravityIntensity = -15;
+    public float jumpHeight = 3;
+    public float gravityIntensity = -15;
+    public int maxJumps = 1;
+    public int jumpsRemaining = 0;
 
-	[Header("Falling")]
+    [Header("Falling")]
     public float inAirTimer;
     public float leapingVelocity;
     public float fallingSpeed;
 
-	[Header("Ground Check")]
-	public bool isGrounded;
-	public LayerMask whatIsGround;
+    [Header("Ground Check")]
+    public bool isGrounded;
+    public LayerMask whatIsGround;
     public float playerHeight = 3.6f;
 
     [Header("Earth Ability")]
     public LayerMask validEarth;
     public bool canSummonEarth;
+    public bool earthCollide;
     Vector3 lookDirection;
     public GameObject summonPoint;
-    SummonEarth summonEarth;
+    public SummonEarth summonEarth;
 
     [Header("Old Double Jump")]
     public bool doubleJump;
     public bool readyToJump;
     public bool hasJumped;
-    public float jumpBoost;
+    public float jumpBoost = 3;
+	#endregion
 
 	void Awake()
     {
@@ -55,13 +65,14 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
         animatorManager = GetComponent<AnimatorManager>();
-    }
+        playerCapsule = GetComponent<CapsuleCollider>();
+        checkpoints = GetComponent<Checkpoints>();
 
-	private void Update()
-	{
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f, whatIsGround);
-    }
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
 
+	#region Movement
 	public void HandleAllMovement()
     {
         HandleFalling();
@@ -98,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-            moveDirection = moveDirection * runningSpeed;
+        moveDirection = moveDirection * runningSpeed;
 
         Vector3 movementVelocity = moveDirection;
         playerRigidbody.velocity = movementVelocity;
@@ -131,15 +142,16 @@ public class PlayerMovement : MonoBehaviour
         {
             inAirTimer = inAirTimer + Time.deltaTime;
             playerRigidbody.AddForce(transform.forward * leapingVelocity);
-            playerRigidbody.AddForce(Vector3.down * fallingSpeed * inAirTimer);
+            playerRigidbody.AddForce(Vector3.down * fallingSpeed * inAirTimer * 2);
         }
 
         if (isGrounded)
         {
             inAirTimer = 0;
-			animatorManager.animator.SetBool("isJumping", false);
-		}
-	}
+            jumpsRemaining = maxJumps;
+            animatorManager.animator.SetBool("isJumping", false);
+        }
+    }
 
     public void OldHandleJumping()
     {
@@ -151,77 +163,146 @@ public class PlayerMovement : MonoBehaviour
             }
 
             playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-			Invoke("StopJump", 1);
-		}
+            Invoke("StopJump", 1);
+        }
     }
 
     public void HandleJumping()
     {
         Debug.Log("Jump Recieve");
 
-		if (isGrounded)
+        if (jumpsRemaining > 0)
         {
             Debug.Log("Jump Activate");
+            isJumping = true;
+            jumpsRemaining -= 1;
+
             animatorManager.animator.SetBool("isJumping", true);
 
-			#region Stand In Jump
-			playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-			Invoke("StopJump", 1);
-			#endregion
+            #region Stand In Jump
+            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
+            Invoke("StopJump", 2);
+            #endregion
 
-			#region Actual Jump
-			// float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-			// Vector3 playerVelocity = moveDirection;
-			// playerVelocity.y = jumpingVelocity;
-			// playerRigidbody.velocity = playerVelocity;
-			// animatorManager.PlayTargetAnimation("Jump", false);
-			#endregion
-		}
-	}
+            #region Actual Jump
+            //float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+            //Vector3 playerVelocity = moveDirection;
+            //playerVelocity.y = jumpingVelocity;
+            //playerRigidbody.velocity = playerVelocity;
+            #endregion
+
+        }
+    }
 
     void StopJump()
     {
         hasJumped = true;
         isJumping = false;
         readyToJump = true;
+        animatorManager.animator.SetBool("isJumping", false);
     }
+	#endregion
 
-	private void OnCollisionEnter(Collision collision)
+	#region Collisions
+	public void OnCollisionStay(Collision collision)
 	{
-        jumpBoost = 5;
-	}
-
-	private void OnCollisionExit(Collision collision)
-	{
-        jumpBoost = 1;
-	}
-
-    public void EarthActivate()
-    {
-        Debug.Log("Earth Recieved");
-
-        RaycastHit hit;
-        canSummonEarth = Physics.Raycast(transform.position, Vector3.forward, out hit, 5f, validEarth);
-
-        if(canSummonEarth)
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
 		{
-            Debug.Log("Earth Activate");
-            Vector3 relocate = hit.transform.position;
-            summonPoint.transform.position = relocate;
+			isGrounded = true;
+			Vector3 relocate = collision.gameObject.transform.position;
+			relocate.y = relocate.y - 2;
+			summonPoint.transform.position = relocate;
+		}
+	}
+
+	public void OnCollisionExit(Collision collision)
+	{
+		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+		{
+			isGrounded = false;
+		}
+	}
+
+	public void OnTriggerEnter(Collider trigger)
+	{
+		if (trigger.GetComponent<Collider>().tag == "validEarth")
+		{
+			canSummonEarth = true;
+		}
+
+		if (trigger.GetComponent<Collider>().tag == "boost")
+		{
+			jumpBoost = 6;
+		}
+
+        if (trigger.GetComponent<Collider>().tag == "mask")
+        {
+            trigger.gameObject.SetActive(false);
+        }
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
+		{
+			Debug.Log("Respawn");
+			transform.position = checkpoints.respawnPoint.transform.position;
+		}
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
+        {
+            SceneManager.LoadScene("Art Area");
+        }
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadSceneEarth")
+		{
+			SceneManager.LoadScene("Earth_Level");
+		}
+	}
+
+	public void OnTriggerExit(Collider trigger)
+	{
+		if (trigger.GetComponent<Collider>().tag == "validEarth")
+		{
+			canSummonEarth = false;
+		}
+
+		if (trigger.GetComponent<Collider>().tag == "boost")
+		{
+			jumpBoost = 3;
+		}
+	}
+	#endregion
+
+	public void EarthActivate()
+	{
+		Debug.Log("Earth Recieved");
+
+		if (canSummonEarth)
+		{
+			Debug.Log("Hit");
 			summonEarth.ActivateAbility();
 		}
 	}
 
-	public void OldEarthActivate()
+    public void OldEarthActivate()
     {
-        Debug.Log("Recieved");
-		//canSummon = Physics.Raycast(transform.position, Vector3.forward, 5, validEarth);
+        Debug.Log("Earth Recieved");
 
-       // if (canSummon)
+        RaycastHit hit;
+        earthCollide = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f);
+
+        if (earthCollide)
         {
-            Debug.Log("Hit");
-			//summonPoint.transform.position = hit.transform.position;
-            summonEarth.ActivateAbility();
-		}
-	}
+            Debug.Log("Earth Hit");
+
+            if (hit.collider.CompareTag("validEarth"))
+            {
+                Debug.Log("Earth Activate");
+                Vector3 relocate = hit.transform.position;
+                summonPoint.transform.position = relocate;
+                summonEarth.ActivateAbility();
+            }
+        }
+    }
+
+	
+	
 }
