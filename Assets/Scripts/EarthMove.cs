@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EarthMove : MonoBehaviour
 {
+    #region Variables
     public float timeElapsed;
     public float moveDuration = 5;
     public float moveValue = 10;
@@ -13,6 +14,7 @@ public class EarthMove : MonoBehaviour
 
     public GameObject earthChunk;
     Rigidbody earthRigid;
+    #endregion
 
     private void Start()
 	{
