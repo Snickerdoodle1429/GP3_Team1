@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    #region Variables
     PlayerControls playerControls;
     PlayerMovement playerMovement;
     AnimatorManager animatorManager;
@@ -25,10 +24,8 @@ public class InputManager : MonoBehaviour
     public bool pauseKey;
 
     public bool earthKey;
-    #endregion
 
-    #region Manage
-    private void Awake()
+	private void Awake()
 	{
         animatorManager = GetComponent<AnimatorManager>();
         pausedMenu = FindObjectOfType<PausedMenu>();
@@ -73,10 +70,8 @@ public class InputManager : MonoBehaviour
         HandleEarthAbility();
         HandlePause();
 	}
-    #endregion
 
-    #region Move
-    void HandleMovementInput()
+	void HandleMovementInput()
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
@@ -110,9 +105,7 @@ public class InputManager : MonoBehaviour
 			jumpKey = false;
 		}
     }
-    #endregion
 
-    #region Abilities
     void HandleEarthAbility()
     {
         if (earthKey)
@@ -122,9 +115,7 @@ public class InputManager : MonoBehaviour
             earthKey = false;
         }
     }
-    #endregion
 
-    #region Menus
     void HandlePause()
     {
         if (pauseKey)
@@ -134,5 +125,4 @@ public class InputManager : MonoBehaviour
             pauseKey = false;
         }
     }
-    #endregion
 }
