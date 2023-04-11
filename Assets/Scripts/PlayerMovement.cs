@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerMovement : MonoBehaviour
 {
-	#region Inputs
+	#region Variables
 	InputManager inputManager;
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
@@ -269,9 +268,10 @@ public class PlayerMovement : MonoBehaviour
 			jumpBoost = 3;
 		}
 	}
-	#endregion
+    #endregion
 
-	public void EarthActivate()
+    #region Abilities
+    public void EarthActivate()
 	{
 		Debug.Log("Earth Recieved");
 
@@ -302,7 +302,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-	
-	
+    #endregion
 }
