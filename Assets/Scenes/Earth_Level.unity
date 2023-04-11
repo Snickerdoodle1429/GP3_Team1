@@ -4214,15 +4214,10 @@ Transform:
   - {fileID: 956645074}
   - {fileID: 944419373}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_RootOrder: 31
-=======
+
+
   m_RootOrder: 29
->>>>>>> f4695a224a60125bd9bd896dc94c2d0a7b27dd1f
-=======
-  m_RootOrder: 30
->>>>>>> parent of 5446750 (lighting)
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544861953 stripped
 GameObject:
@@ -4571,68 +4566,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-<<<<<<< HEAD
---- !u!1001 &554734611
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3926309468814464200, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_Name
-      value: FX Sparkle 3 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -193.00594
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -463.49823
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-=======
->>>>>>> f4695a224a60125bd9bd896dc94c2d0a7b27dd1f
 --- !u!1001 &564621564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11536,15 +11469,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_RootOrder: 30
-=======
   m_RootOrder: 28
->>>>>>> f4695a224a60125bd9bd896dc94c2d0a7b27dd1f
 =======
-  m_RootOrder: 29
->>>>>>> parent of 5446750 (lighting)
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1342150817
 PrefabInstance:
@@ -14734,68 +14661,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
-<<<<<<< HEAD
---- !u!1001 &1749842377
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3926309468814464200, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_Name
-      value: FX Sparkle 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -510.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 63.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -466.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365669663923487520, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 176b59f1bf010cd44b97a5f7ee0c4dee, type: 3}
-=======
->>>>>>> f4695a224a60125bd9bd896dc94c2d0a7b27dd1f
 --- !u!1001 &1750679467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17989,12 +17854,8 @@ Transform:
   m_Children:
   - {fileID: 3362994694978328273}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 13
-<<<<<<< HEAD
-=======
   m_RootOrder: 12
->>>>>>> parent of 5446750 (lighting)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3129326026986475202
 Transform:

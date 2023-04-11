@@ -25,15 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4118283457352230953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LocalPosition: {x: -353.15594, y: 23.800001, z: -395.63528}
-=======
-  m_LocalPosition: {x: -325.47073, y: 17.8, z: -392.27676}
->>>>>>> f4695a224a60125bd9bd896dc94c2d0a7b27dd1f
-=======
-  m_LocalPosition: {x: -331.54837, y: 15.709877, z: -537.2359}
->>>>>>> parent of 5446750 (lighting)
+
+
+
   m_LocalScale: {x: 3, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
