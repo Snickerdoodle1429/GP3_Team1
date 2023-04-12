@@ -12786,6 +12786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5836601022994767231, guid: 613c014f5dda74e0fbddf3d3f3326ba1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 613c014f5dda74e0fbddf3d3f3326ba1, type: 3}
@@ -13744,7 +13748,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d3102906b5a85b42948a0fe646df6d3, type: 3}
   m_PrefabInstance: {fileID: 1219754155}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1665989851
+--- !u!64 &1665989855
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17766,15 +17770,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819512538715041073, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -593.4643
+      value: -593.47
       objectReference: {fileID: 0}
     - target: {fileID: 819512538715041073, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.77
+      value: 77.36
       objectReference: {fileID: 0}
     - target: {fileID: 819512538715041073, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.16867
+      value: -36.17
       objectReference: {fileID: 0}
     - target: {fileID: 819512538715041073, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: m_LocalRotation.w

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public AnimatorManager animatorManager;
     public Animator animator;
     Checkpoints checkpoints;
+    JumpTest jumpTest;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravityIntensity = -15;
     public int maxJumps = 1;
     public int jumpsRemaining = 0;
+    public float jumpBoost = 3;
 
 	[Header("Falling")]
     public float inAirTimer;
@@ -45,18 +47,9 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight = 3.6f;
 
     [Header("Earth Ability")]
-    public LayerMask validEarth;
     public bool canSummonEarth;
-    public bool earthCollide;
-    Vector3 lookDirection;
     public GameObject summonPoint;
     public SummonEarth summonEarth;
-
-    [Header("Old Double Jump")]
-    public bool doubleJump;
-    public bool readyToJump;
-    public bool hasJumped;
-    public float jumpBoost = 3;
 	#endregion
 
 	void Awake()
@@ -67,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         animatorManager = GetComponent<AnimatorManager>();
         playerCapsule = GetComponent<CapsuleCollider>();
         checkpoints = GetComponent<Checkpoints>();
+        jumpTest = GetComponent<JumpTest>();
 
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
@@ -89,8 +83,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             moveDirection.y = 0;
-            doubleJump = true;
-            hasJumped = false;
         }
 
         if (isSprinting)
@@ -153,20 +145,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OldHandleJumping()
-    {
-        if (isGrounded || doubleJump)
-        {
-            if (hasJumped)
-            {
-                doubleJump = false;
-            }
-
-            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-            Invoke("StopJump", 1);
-        }
-    }
-
     public void HandleJumping()
     {
         Debug.Log("Jump Recieve");
@@ -179,12 +157,13 @@ public class PlayerMovement : MonoBehaviour
 
             animatorManager.animator.SetBool("isJumping", true);
 
-			#region Stand In Jump
-			//playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-			#endregion
+            #region Stand In Jump
+            //playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
+            #endregion
 
-			#region New Jump
-            //lerp ienumerator function from EarthMove script
+            #region New Jump
+            jumpTest.SendJump();
+            Debug.Log("Send Jump");
 			#endregion
 
 			#region Old Jump
@@ -200,9 +179,7 @@ public class PlayerMovement : MonoBehaviour
 
     void StopJump()
     {
-        hasJumped = true;
         isJumping = false;
-        readyToJump = true;
         animatorManager.animator.SetBool("isJumping", false);
     }
 	#endregion
@@ -286,26 +263,5 @@ public class PlayerMovement : MonoBehaviour
 			summonEarth.ActivateAbility();
 		}
 	}
-
-    public void OldEarthActivate()
-    {
-        Debug.Log("Earth Recieved");
-
-        RaycastHit hit;
-        earthCollide = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f);
-
-        if (earthCollide)
-        {
-            Debug.Log("Earth Hit");
-
-            if (hit.collider.CompareTag("validEarth"))
-            {
-                Debug.Log("Earth Activate");
-                Vector3 relocate = hit.transform.position;
-                summonPoint.transform.position = relocate;
-                summonEarth.ActivateAbility();
-            }
-        }
-    }
     #endregion
 }
