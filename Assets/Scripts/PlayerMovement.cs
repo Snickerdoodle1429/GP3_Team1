@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public int maxJumps = 1;
     public int jumpsRemaining = 0;
 
-    [Header("Falling")]
+	[Header("Falling")]
     public float inAirTimer;
     public float leapingVelocity;
     public float fallingSpeed;
@@ -178,19 +179,23 @@ public class PlayerMovement : MonoBehaviour
 
             animatorManager.animator.SetBool("isJumping", true);
 
-            #region Stand In Jump
-            playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-            Invoke("StopJump", 2);
-            #endregion
+			#region Stand In Jump
+			//playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
+			#endregion
 
-            #region Actual Jump
-            //float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-            //Vector3 playerVelocity = moveDirection;
-            //playerVelocity.y = jumpingVelocity;
-            //playerRigidbody.velocity = playerVelocity;
-            #endregion
+			#region New Jump
+            //lerp ienumerator function from EarthMove script
+			#endregion
 
-        }
+			#region Old Jump
+			//float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+			//Vector3 playerVelocity = moveDirection;
+			//playerVelocity.y = jumpingVelocity;
+			//playerRigidbody.velocity = playerVelocity;
+			#endregion
+
+			Invoke("StopJump", 2);
+		}
     }
 
     void StopJump()
