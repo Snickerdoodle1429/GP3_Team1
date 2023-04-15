@@ -156,9 +156,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 30
+  m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &2173548
+--- !u!114 &2173549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2173544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5fde79054093bd45a982a917c376b1d, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f6a1feab8fd1245b7f2b43148971be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &11603607
@@ -1102,42 +1102,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 957749478729964147, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b90d9c26da5b40e46aab40907a4b0b68, type: 2}
-    - target: {fileID: 2545159344484264015, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ace792fae4e9b7c419e92754b2de6fff, type: 2}
-    - target: {fileID: 2704222570873719849, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2223d2853b091e8468784edf83e73a76, type: 2}
-    - target: {fileID: 2753022113351276692, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9dfddce318d3840489944f29d71660ba, type: 2}
-    - target: {fileID: 3074046868954755300, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b90d9c26da5b40e46aab40907a4b0b68, type: 2}
-    - target: {fileID: 3680575443017878942, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a1842ec0ad6028943a2e00770eb872f7, type: 2}
-    - target: {fileID: 3769661756992418652, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 71f58e6004c4efb4cb23fb9f4da5071f, type: 2}
-    - target: {fileID: 7696086289439055070, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c7baf5472b57370458a3e8110414d3fb, type: 2}
-    - target: {fileID: 8674823995805599144, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d49719083d25f3c4b8fb7a3cf1919d19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
@@ -11298,6 +11262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -8.976
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
       propertyPath: m_Name
       value: daisy (1)
@@ -13773,9 +13741,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.844
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2450776406375912983, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
       propertyPath: m_Name
       value: daisy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122427853962064952, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1122427853962064952, guid: 724f6f5255418f143a1613cb08069dbf, type: 3}
       propertyPath: m_Materials.Array.data[0]
