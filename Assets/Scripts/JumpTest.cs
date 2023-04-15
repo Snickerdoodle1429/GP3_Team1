@@ -19,7 +19,7 @@ public class JumpTest : MonoBehaviour
 
     public void SendJump()
     {
-        Invoke("JumpAbility", 0.75f);
+        Invoke("JumpAbility", 0);
     }
 
     public void JumpAbility()
