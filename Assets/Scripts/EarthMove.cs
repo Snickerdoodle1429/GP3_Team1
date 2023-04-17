@@ -14,15 +14,21 @@ public class EarthMove : MonoBehaviour
 
     public GameObject earthChunk;
     Rigidbody earthRigid;
+
+    public AudioClip EarthPlatform;
     #endregion
 
     private void Start()
 	{
+        AudioSource audio = GetComponent<AudioSource>();
+
         endPosition = transform.position;
         earthRigid = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(6, 7);
         EarthAbility();
-	}
+        EarthSound();
+
+    }
 
 	void EarthAbility()
     {
@@ -30,6 +36,12 @@ public class EarthMove : MonoBehaviour
         
         Vector3 activePostion = endPosition + Vector3.up * moveValue;
         StartCoroutine(MoveEarth(activePostion));
+    }
+
+    void EarthSound()
+    {
+        GetComponent<AudioSource>().clip = EarthPlatform;
+        GetComponent<AudioSource>().Play();
     }
 
     IEnumerator MoveEarth(Vector3 targetPosition)
