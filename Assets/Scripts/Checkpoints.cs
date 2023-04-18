@@ -5,8 +5,9 @@ using UnityEngine;
 public class Checkpoints : MonoBehaviour
 {
 	public GameObject respawnPoint;
+    private AudioClip checkpoint;
 
-	private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.GetComponent<Collider>().tag == "RespawnPoint")
 		{
