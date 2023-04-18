@@ -11,6 +11,10 @@ public class Checkpoints : MonoBehaviour
 		if (other.gameObject.GetComponent<Collider>().tag == "RespawnPoint")
 		{
 			Debug.Log("Spawnpoint: " + transform.position);
+
+			GetComponent<AudioSource>().clip = checkpoint;
+			GetComponent<AudioSource>().Play();
+
 			respawnPoint.transform.position = transform.position;
 			other.gameObject.SetActive(false);
 		}

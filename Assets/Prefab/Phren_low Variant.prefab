@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d998aae1257236e45b6e4e09b98e8bc1, type: 3}
       propertyPath: m_Name
-      value: Phren_low
+      value: Phren_low Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d998aae1257236e45b6e4e09b98e8bc1, type: 3}
       propertyPath: m_Layer
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorManager: {fileID: 907497018}
-  animator: {fileID: 0}
+  animator: {fileID: 907497014}
   playerCapsule: {fileID: 907497020}
   isSprinting: 0
   isJumping: 0
