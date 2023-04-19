@@ -286,7 +286,11 @@ Transform:
   - {fileID: 471229438005925142}
   - {fileID: 2585663129619936233}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 1
+=======
+  m_RootOrder: 0
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: -0.15, y: -94.832, z: 0.922}
 --- !u!64 &8687724292258554787
 MeshCollider:
