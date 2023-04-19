@@ -226,6 +226,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "505f51ae-5656-43ac-a84a-004d17487e70",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Earth",
                     "type": "Button",
                     "id": "0fe8ecc4-bca1-4208-ade9-c667f4508525",
@@ -235,9 +244,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "Fire",
                     "type": "Button",
-                    "id": "505f51ae-5656-43ac-a84a-004d17487e70",
+                    "id": "e3016896-719b-4ed6-9b56-37f310256ee6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -330,6 +339,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b4229ea1-afb4-4677-b50e-ca1acd3cf91a",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54fa6176-9bcb-4eab-982d-c0083035ef71",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

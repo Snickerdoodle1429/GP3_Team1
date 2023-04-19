@@ -25,10 +25,11 @@ public class InputManager : MonoBehaviour
     public bool pauseKey;
 
     public bool earthKey;
-    #endregion
+	public bool fireKey;
+	#endregion
 
-    #region Manage
-    private void Awake()
+	#region Manage
+	private void Awake()
 	{
         animatorManager = GetComponent<AnimatorManager>();
         pausedMenu = FindObjectOfType<PausedMenu>();
@@ -50,14 +51,17 @@ public class InputManager : MonoBehaviour
 			playerControls.PlayerActions.Jump.performed += i => jumpKey= true;
 			playerControls.PlayerActions.Jump.canceled += i => jumpKey = false;
 
+			playerControls.PlayerActions.Pause.performed += i => pauseKey = true;
+			playerControls.PlayerActions.Pause.canceled += i => pauseKey = false;
+
 			playerControls.PlayerActions.Earth.performed += i => earthKey = true;
 			playerControls.PlayerActions.Earth.canceled += i => earthKey = false;
 
-			playerControls.PlayerActions.Pause.performed += i => pauseKey = true;
-			playerControls.PlayerActions.Pause.canceled += i => pauseKey = false;
+			playerControls.PlayerActions.Fire.performed += i => fireKey = true;
+			playerControls.PlayerActions.Fire.canceled += i => fireKey = false;
 		}
 
-        playerControls.Enable();
+		playerControls.Enable();
     }
 
     void OnDisable()

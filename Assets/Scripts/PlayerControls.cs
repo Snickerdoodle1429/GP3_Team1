@@ -248,6 +248,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""505f51ae-5656-43ac-a84a-004d17487e70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Earth"",
                     ""type"": ""Button"",
                     ""id"": ""0fe8ecc4-bca1-4208-ade9-c667f4508525"",
@@ -257,9 +266,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""Fire"",
                     ""type"": ""Button"",
-                    ""id"": ""505f51ae-5656-43ac-a84a-004d17487e70"",
+                    ""id"": ""e3016896-719b-4ed6-9b56-37f310256ee6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -354,6 +363,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4229ea1-afb4-4677-b50e-ca1acd3cf91a"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54fa6176-9bcb-4eab-982d-c0083035ef71"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -368,8 +399,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerActions_Earth = m_PlayerActions.FindAction("Earth", throwIfNotFound: true);
         m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerActions_Earth = m_PlayerActions.FindAction("Earth", throwIfNotFound: true);
+        m_PlayerActions_Fire = m_PlayerActions.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -472,16 +504,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Sprint;
     private readonly InputAction m_PlayerActions_Jump;
-    private readonly InputAction m_PlayerActions_Earth;
     private readonly InputAction m_PlayerActions_Pause;
+    private readonly InputAction m_PlayerActions_Earth;
+    private readonly InputAction m_PlayerActions_Fire;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Sprint => m_Wrapper.m_PlayerActions_Sprint;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
-        public InputAction @Earth => m_Wrapper.m_PlayerActions_Earth;
         public InputAction @Pause => m_Wrapper.m_PlayerActions_Pause;
+        public InputAction @Earth => m_Wrapper.m_PlayerActions_Earth;
+        public InputAction @Fire => m_Wrapper.m_PlayerActions_Fire;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -497,12 +531,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
-                @Earth.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
-                @Earth.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
-                @Earth.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
                 @Pause.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnPause;
+                @Earth.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
+                @Earth.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
+                @Earth.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnEarth;
+                @Fire.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -513,12 +550,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Earth.started += instance.OnEarth;
-                @Earth.performed += instance.OnEarth;
-                @Earth.canceled += instance.OnEarth;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Earth.started += instance.OnEarth;
+                @Earth.performed += instance.OnEarth;
+                @Earth.canceled += instance.OnEarth;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
         }
     }
@@ -532,7 +572,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnSprint(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnEarth(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnEarth(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }
