@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8488882569010156551}
   - component: {fileID: 4778716967251744506}
   - component: {fileID: 7534630336523218750}
+  - component: {fileID: 8962487153015552250}
+  - component: {fileID: 8962487153015552251}
   m_Layer: 0
   m_Name: Ring_04
   m_TagString: Untagged
@@ -53,7 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -95,9 +97,40 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1869393951921077038, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!64 &8962487153015552250
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755205165977277756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1869393951921077038, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!114 &8962487153015552251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755205165977277756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 372d8336bc39f9f40958ebd32df37248, type: 2}
 --- !u!1 &2451711427395555463
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +143,7 @@ GameObject:
   - component: {fileID: 8927632799608048534}
   - component: {fileID: 8117616529628724441}
   - component: {fileID: 38707154}
+  - component: {fileID: 8721262551750316072}
   m_Layer: 0
   m_Name: Ring_03
   m_TagString: Untagged
@@ -199,6 +233,23 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: b9801e6fb01a92644b2f7370a85e88aa, type: 2}
+--- !u!114 &8721262551750316072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451711427395555463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: f58af322ac66a4045afc0bc3a06b1921, type: 2}
 --- !u!1 &2802246825934640193
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +286,7 @@ Transform:
   - {fileID: 471229438005925142}
   - {fileID: 2585663129619936233}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -0.15, y: -94.832, z: 0.922}
 --- !u!64 &8687724292258554787
 MeshCollider:
@@ -263,6 +314,7 @@ GameObject:
   - component: {fileID: 489714855708405903}
   - component: {fileID: 6177680869640162985}
   - component: {fileID: 1971991206277166882}
+  - component: {fileID: 3567654475841333614}
   m_Layer: 0
   m_Name: Platform
   m_TagString: whatIsGround
@@ -304,7 +356,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -349,6 +401,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1149973307703454695, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!64 &3567654475841333614
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048012565207287186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1149973307703454695, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
 --- !u!1 &4453296086433025864
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +428,8 @@ GameObject:
   - component: {fileID: 8677574196745145580}
   - component: {fileID: 8165014326786651209}
   - component: {fileID: 1864932873}
+  - component: {fileID: 8436849742011074796}
+  - component: {fileID: 8436849742011074797}
   m_Layer: 0
   m_Name: Page_Pedestal1
   m_TagString: Untagged
@@ -403,7 +471,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -465,6 +533,37 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: aa84d4dd80398134c9bb44c9dbcddd0f, type: 2}
+--- !u!64 &8436849742011074796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453296086433025864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5844582807739777596, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!114 &8436849742011074797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453296086433025864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 55e8453bdecd22c46b9691839767a34e, type: 2}
 --- !u!1 &5003136820413718914
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +579,9 @@ GameObject:
   - component: {fileID: 3885073411891547415}
   - component: {fileID: 107893963}
   - component: {fileID: 107893966}
+  - component: {fileID: 6782378307902665988}
+  - component: {fileID: 6782378307902665989}
+  - component: {fileID: 6782378307902665990}
   m_Layer: 0
   m_Name: Ring_01
   m_TagString: Untagged
@@ -521,7 +623,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -610,6 +712,49 @@ MonoBehaviour:
   startMarkerOne: {fileID: 0}
   endMarkerOne: {fileID: 0}
   speed: 0.22
+--- !u!64 &6782378307902665988
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5003136820413718914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5385319066956288701, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!114 &6782378307902665989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5003136820413718914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a18cdd3e72586841816053375ddd0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6782378307902665990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5003136820413718914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: e56b22c8723d52b4e9ed4a2277cae6eb, type: 2}
 --- !u!1 &8849069419721317964
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +770,9 @@ GameObject:
   - component: {fileID: 4195276039054429169}
   - component: {fileID: 1068379439}
   - component: {fileID: 1068379442}
+  - component: {fileID: 8314070338734895796}
+  - component: {fileID: 8314070338734895797}
+  - component: {fileID: 8314070338734895798}
   m_Layer: 0
   m_Name: Ring_02
   m_TagString: Untagged
@@ -666,7 +814,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -755,3 +903,46 @@ MonoBehaviour:
   startMarkerOne: {fileID: 0}
   endMarkerOne: {fileID: 0}
   speed: 0.18
+--- !u!64 &8314070338734895796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8849069419721317964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6289720402532411927, guid: 3f72e772e210cec4888e54cb094f96a8, type: 3}
+--- !u!114 &8314070338734895797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8849069419721317964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fde79054093bd45a982a917c376b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8314070338734895798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8849069419721317964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3a3aa42cc280dea40bbf936c4cfc4b0f, type: 2}
