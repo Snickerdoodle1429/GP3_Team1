@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public int maxJumps = 1;
     public int jumpsRemaining = 0;
     public float jumpBoost = 3;
+    public float boostpad = 25;
 
 	[Header("Falling")]
     public float inAirTimer;
@@ -197,10 +198,9 @@ public class PlayerMovement : MonoBehaviour
 		{
 			canSummonEarth = true;
 		}
-
 		if (trigger.GetComponent<Collider>().tag == "boost")
 		{
-			jumpBoost = 6;
+            jumpBoost = boostpad;
 		}
 
         if (trigger.GetComponent<Collider>().tag == "mask")
