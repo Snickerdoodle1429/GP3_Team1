@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -291.2
+      value: -308.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 312.3
+      value: 318.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 360.26
+      value: 342.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,12 +58,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_Name
-      value: Fire_pillarmed (1) Variant
+      value: Fire_pillarmed (1) Variant (3)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
       propertyPath: m_TagString
       value: whatIsGround
       objectReference: {fileID: 0}
+    - target: {fileID: 2270181118833908033, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8ceb47448d1cc34a8b27994d51a4dca, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d32af1cad4678144497a19b6fb2f4414, type: 3}

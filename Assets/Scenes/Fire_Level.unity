@@ -5766,10 +5766,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire_pillarmed (1) Variant (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 143542577636682329, guid: 14376640ecccb4641b35b3b287cf03c8, type: 3}
-      propertyPath: m_TagString
-      value: whatIsGround
-      objectReference: {fileID: 0}
     - target: {fileID: 771847929133396195, guid: 14376640ecccb4641b35b3b287cf03c8, type: 3}
       propertyPath: m_RootOrder
       value: 128
@@ -8533,10 +8529,6 @@ PrefabInstance:
     - target: {fileID: 4794926577203193375, guid: d3c0343d903eeb941a8289d5ca3472f4, type: 3}
       propertyPath: m_Name
       value: Fire_pillarsmall Variant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794926577203193375, guid: d3c0343d903eeb941a8289d5ca3472f4, type: 3}
-      propertyPath: m_TagString
-      value: whatIsGround
       objectReference: {fileID: 0}
     - target: {fileID: 5314477348110138533, guid: d3c0343d903eeb941a8289d5ca3472f4, type: 3}
       propertyPath: m_RootOrder
