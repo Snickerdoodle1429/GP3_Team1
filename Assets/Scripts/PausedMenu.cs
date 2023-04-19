@@ -9,16 +9,25 @@ public class PausedMenu : MonoBehaviour
     public static bool isPaused;
     public AudioSource audioSource;
     public GameObject crosshairs;
+	public GameObject levelSelect;
 
-    void Start()
+
+	void Start()
     {
-        pausedMenu.SetActive(false);
-        isPaused = false;
-        Time.timeScale = 1f;
-        crosshairs.SetActive(true);
-    }
+		Invoke("WhenStart", 0.01f);
+	}
 
-    public void PauseButton()
+	void WhenStart()
+	{
+		pausedMenu.SetActive(false);
+		levelSelect.SetActive(false);
+		isPaused = false;
+		Time.timeScale = 1f;
+		crosshairs.SetActive(true);
+	}
+
+	#region Pause
+	public void PauseButton()
     {
 		Debug.Log("Pause");
 
@@ -63,8 +72,10 @@ public class PausedMenu : MonoBehaviour
 
         audioSource.Play(0);
     }
+	#endregion
 
-    public void GoToMainMenu()
+	#region Level Select
+	public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
         isPaused = false;
@@ -74,4 +85,37 @@ public class PausedMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+	public void LevelSelect()
+	{
+		levelSelect.SetActive(true);
+		pausedMenu.SetActive(false);
+	}
+
+	public void LoadTutorial()
+	{
+		SceneManager.LoadScene("Art Area");
+	}
+
+	public void LoadWater()
+	{
+		SceneManager.LoadScene("Water_Level");
+	}
+
+	public void LoadEarth()
+	{
+		SceneManager.LoadScene("Earth_Level");
+	}
+
+	public void LoadFire()
+	{
+		SceneManager.LoadScene("Fire_Level");
+	}
+
+	public void ReturnToPause()
+	{
+		levelSelect.SetActive(false);
+		pausedMenu.SetActive(true);
+	}
+	#endregion
 }

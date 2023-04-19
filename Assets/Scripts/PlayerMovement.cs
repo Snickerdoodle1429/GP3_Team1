@@ -156,22 +156,9 @@ public class PlayerMovement : MonoBehaviour
             jumpsRemaining -= 1;
 
             animatorManager.animator.SetBool("isJumping", true);
-
-            #region Stand In Jump
-            //playerRigidbody.AddForce(new Vector3(0, jumpHeight * 2 * playerHeight * jumpBoost, 0), ForceMode.Impulse);
-            #endregion
-
-            #region New Jump
+            
             jumpTest.SendJump();
             Debug.Log("Send Jump");
-			#endregion
-
-			#region Old Jump
-			//float jumpingVelocity = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-			//Vector3 playerVelocity = moveDirection;
-			//playerVelocity.y = jumpingVelocity;
-			//playerRigidbody.velocity = playerVelocity;
-			#endregion
 
 			Invoke("StopJump", 2);
 		}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6403813220410575399}
   - component: {fileID: 5698555276567058333}
   - component: {fileID: -691737495778289548}
+  - component: {fileID: 8471401069022011163}
   m_Layer: 0
   m_Name: Checkpoint_1
   m_TagString: RespawnPoint
@@ -35,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6053742048305544732}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2828011116993188525
 MeshFilter:
@@ -112,7 +113,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4721222, y: 1.7287254, z: 1.6562046}
+  m_Size: {x: 1.75, y: 1.75, z: 1.75}
   m_Center: {x: -157.2261, y: 37.18714, z: 0.23001093}
 --- !u!82 &-691737495778289548
 AudioSource:
@@ -125,7 +126,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31ed8f0f737b4754fb98587ae148f049, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -210,6 +211,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8471401069022011163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208737846276169381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb99581cbc5242b98315f18b7a63ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}
+  checkpoint: {fileID: 8300000, guid: 31ed8f0f737b4754fb98587ae148f049, type: 3}
 --- !u!1001 &2313691795347946812
 PrefabInstance:
   m_ObjectHideFlags: 0

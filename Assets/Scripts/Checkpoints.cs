@@ -5,19 +5,25 @@ using UnityEngine;
 public class Checkpoints : MonoBehaviour
 {
 	public GameObject respawnPoint;
-    private AudioClip checkpoint;
+	public AudioClip checkpoint;
 
-    private void OnTriggerEnter(Collider other)
+	private void Start()
 	{
-		if (other.gameObject.GetComponent<Collider>().tag == "RespawnPoint")
+        AudioSource audio = GetComponent<AudioSource>();
+		audio.playOnAwake = false;
+		audio.clip = checkpoint;
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.GetComponent<Collider>().tag == "Player")
 		{
 			Debug.Log("Spawnpoint: " + transform.position);
 
-			GetComponent<AudioSource>().clip = checkpoint;
 			GetComponent<AudioSource>().Play();
 
 			respawnPoint.transform.position = transform.position;
-			other.gameObject.SetActive(false);
+			gameObject.SetActive(false);
 		}
 	}
 }

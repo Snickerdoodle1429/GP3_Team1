@@ -3236,6 +3236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8471401069022011163, guid: 991137377c6d347508d238d908611c87, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391147541}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 991137377c6d347508d238d908611c87, type: 3}
@@ -6600,6 +6604,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8471401069022011163, guid: 991137377c6d347508d238d908611c87, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391147541}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 991137377c6d347508d238d908611c87, type: 3}
@@ -7331,6 +7339,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8471401069022011163, guid: 991137377c6d347508d238d908611c87, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391147541}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 991137377c6d347508d238d908611c87, type: 3}
@@ -12952,7 +12964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836601022994767231, guid: 613c014f5dda74e0fbddf3d3f3326ba1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -17979,7 +17991,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.166
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 907497024, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
 --- !u!4 &2729775935323412319
