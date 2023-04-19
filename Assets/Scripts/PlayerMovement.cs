@@ -219,9 +219,19 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Art Area");
         }
 
-		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadSceneEarth")
+		if (trigger.gameObject.GetComponent<Collider>().tag == "Level1")
+		{
+			SceneManager.LoadScene("Water_Level");
+		}
+
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Level2")
 		{
 			SceneManager.LoadScene("Earth_Level");
+		}
+
+		if (trigger.gameObject.GetComponent<Collider>().tag == "Level3")
+		{
+			SceneManager.LoadScene("Fire_Level");
 		}
 	}
 

@@ -11,9 +11,14 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        creditsScreen.SetActive(false);
-        controlsScreen.SetActive(false);
+        Invoke("LateStart", 0.01f);
     }
+
+    void LateStart()
+    {
+		creditsScreen.SetActive(false);
+		controlsScreen.SetActive(false);
+	}
 
     public void PlayGame()
     {
