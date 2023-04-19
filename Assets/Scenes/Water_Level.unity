@@ -8959,7 +8959,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
-<<<<<<< Updated upstream
 --- !u!1 &220692088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 755205165977277756, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
@@ -8967,15 +8966,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &220692089
 BoxCollider:
-=======
 --- !u!1 &223618592
 GameObject:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 220692088}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -8983,7 +8979,6 @@ GameObject:
   serializedVersion: 2
   m_Size: {x: 600, y: 600, z: 30}
   m_Center: {x: 0, y: -0.000061035156, z: 0}
-=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 223618593}
@@ -10575,7 +10570,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252439359}
   m_Mesh: {fileID: -8081317734454312985, guid: 7991a68153ed72c46a79592760059a8b, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &253477998
 GameObject:
   m_ObjectHideFlags: 0
