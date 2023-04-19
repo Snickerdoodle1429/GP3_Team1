@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Art Area.unity
     guid: e9919f437fd711145b30294bb35e5919
   - enabled: 1
+    path: Assets/Scenes/Water_Level.unity
+    guid: 7094ad819db1ce44ea4d8910e08546c8
+  - enabled: 1
     path: Assets/Scenes/Earth_Level.unity
     guid: a0d2f06c8168c8e429608cffd8565f46
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 55ba8b05cde054181beb851d811c31e7
   m_configObjects: {}

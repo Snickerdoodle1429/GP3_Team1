@@ -9,17 +9,6 @@ public class MainMenu : MonoBehaviour
     public GameObject controlsScreen;
     public AudioSource audio;
 
-    public void Start()
-    {
-        Invoke("LateStart", 0.01f);
-    }
-
-    void LateStart()
-    {
-		creditsScreen.SetActive(false);
-		controlsScreen.SetActive(false);
-	}
-
     public void PlayGame()
     {
         audio.Play();

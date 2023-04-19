@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Transform cameraObject;
     Rigidbody playerRigidbody;
     public Collider playerCapsule;
+    public GameObject hubTP;
 
     [Header("Movement")]
     public bool isSprinting;
@@ -233,7 +234,25 @@ public class PlayerMovement : MonoBehaviour
 		{
 			SceneManager.LoadScene("Fire_Level");
 		}
-	}
+
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Win")
+        {
+            SceneManager.LoadScene("Win");
+        }
+
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Lose")
+        {
+            SceneManager.LoadScene("Lose");
+        }
+
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Finish")
+        {
+            Debug.Log("Teleport");
+            transform.position = hubTP.transform.position;
+        }
+
+
+    }
 
 	public void OnTriggerExit(Collider trigger)
 	{

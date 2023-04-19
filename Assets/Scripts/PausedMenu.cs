@@ -66,6 +66,7 @@ public class PausedMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pausedMenu.SetActive(false);
+		levelSelect.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
         crosshairs.SetActive(true);
