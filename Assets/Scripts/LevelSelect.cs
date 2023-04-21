@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour
 {
 	public GameObject selection;
+	public GameObject overallStorage;
 
 	void Start()
 	{
@@ -20,6 +21,7 @@ public class LevelSelect : MonoBehaviour
 	public void GoToMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
+		Destroy(overallStorage);
 	}
 
 	public void QuitGame()

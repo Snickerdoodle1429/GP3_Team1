@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-	#region Variables
-	InputManager inputManager;
+    #region Variables
+    InputManager inputManager;
     PlayerManager playerManager;
     public AnimatorManager animatorManager;
     public Animator animator;
     Checkpoints checkpoints;
     JumpTest jumpTest;
+    public Overall overall;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpBoost = 3;
     public float boostpad = 25;
 
-	[Header("Falling")]
+    [Header("Falling")]
     public float inAirTimer;
     public float leapingVelocity;
     public float fallingSpeed;
@@ -50,11 +51,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Earth Ability")]
     public bool canSummonEarth;
-    public GameObject summonPoint;
-    public SummonEarth summonEarth;
-	#endregion
+    #endregion
 
-	void Awake()
+    void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
@@ -64,12 +63,12 @@ public class PlayerMovement : MonoBehaviour
         checkpoints = GetComponent<Checkpoints>();
         jumpTest = GetComponent<JumpTest>();
 
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
-	}
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
-	#region Movement
-	public void HandleAllMovement()
+    #region Movement
+    public void HandleAllMovement()
     {
         HandleFalling();
         HandleMovement();
@@ -158,12 +157,12 @@ public class PlayerMovement : MonoBehaviour
             jumpsRemaining -= 1;
 
             animatorManager.animator.SetBool("isJumping", true);
-            
+
             jumpTest.SendJump();
             Debug.Log("Send Jump");
 
-			Invoke("StopJump", 2);
-		}
+            Invoke("StopJump", 2);
+        }
     }
 
     void StopJump()
@@ -171,69 +170,81 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
         animatorManager.animator.SetBool("isJumping", false);
     }
-	#endregion
+    #endregion
 
-	#region Collisions
-	public void OnCollisionStay(Collision collision)
-	{
-		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
-		{
-			isGrounded = true;
-			Vector3 relocate = collision.gameObject.transform.position;
-			relocate.y = relocate.y - 2;
-			summonPoint.transform.position = relocate;
-		}
-	}
+    #region Collisions
+    public void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+        {
+            isGrounded = true;
+        }
+    }
 
-	public void OnCollisionExit(Collision collision)
-	{
-		if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
-		{
-			isGrounded = false;
-		}
-	}
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Collider>().tag == "whatIsGround")
+        {
+            isGrounded = false;
+        }
+    }
 
-	public void OnTriggerEnter(Collider trigger)
-	{
-		if (trigger.GetComponent<Collider>().tag == "validEarth")
-		{
-			canSummonEarth = true;
-		}
-		if (trigger.GetComponent<Collider>().tag == "boost")
-		{
+    public void OnTriggerEnter(Collider trigger)
+    {
+        if (trigger.GetComponent<Collider>().tag == "validEarth")
+        {
+            canSummonEarth = true;
+        }
+        if (trigger.GetComponent<Collider>().tag == "boost")
+        {
             jumpBoost = boostpad;
-		}
+        }
 
         if (trigger.GetComponent<Collider>().tag == "mask")
         {
             trigger.gameObject.SetActive(false);
         }
 
-		if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
-		{
-			Debug.Log("Respawn");
-			transform.position = checkpoints.respawnPoint.transform.position;
-		}
-
-		if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
+        if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
         {
-            SceneManager.LoadScene("Art Area");
+            Debug.Log("Respawn");
+            transform.position = checkpoints.respawnPoint.transform.position;
         }
 
-		if (trigger.gameObject.GetComponent<Collider>().tag == "Level1")
-		{
-			SceneManager.LoadScene("Water_Level");
+        if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
+        {
+            SceneManager.LoadScene("Art Area");
+
+            if(trigger.gameObject.GetComponent<Collider>().name == "Teleport1")
+            {
+                overall.firstLevel = true;
+            }
+
+			if (trigger.gameObject.GetComponent<Collider>().name == "Teleport2")
+			{
+                overall.secondLevel = true;
+			}
+
+			if (trigger.gameObject.GetComponent<Collider>().name == "Teleport3")
+			{
+                overall.thirdLevel = true;
+			}
 		}
+
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Level1")
+        {
+            SceneManager.LoadScene("Water_Level");
+        }
 
         if (trigger.gameObject.GetComponent<Collider>().tag == "Level2")
-		{
-			SceneManager.LoadScene("Earth_Level");
-		}
+        {
+            SceneManager.LoadScene("Earth_Level");
+        }
 
-		if (trigger.gameObject.GetComponent<Collider>().tag == "Level3")
-		{
-			SceneManager.LoadScene("Fire_Level");
-		}
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Level3")
+        {
+            SceneManager.LoadScene("Fire_Level");
+        }
 
         if (trigger.gameObject.GetComponent<Collider>().tag == "Win")
         {
@@ -250,34 +261,19 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Teleport");
             transform.position = hubTP.transform.position;
         }
-
-
     }
 
-	public void OnTriggerExit(Collider trigger)
-	{
-		if (trigger.GetComponent<Collider>().tag == "validEarth")
-		{
-			canSummonEarth = false;
-		}
+    public void OnTriggerExit(Collider trigger)
+    {
+        if (trigger.GetComponent<Collider>().tag == "validEarth")
+        {
+            canSummonEarth = false;
+        }
 
-		if (trigger.GetComponent<Collider>().tag == "boost")
-		{
-			jumpBoost = 3;
-		}
-	}
-    #endregion
-
-    #region Abilities
-    public void EarthActivate()
-	{
-		Debug.Log("Earth Recieved");
-
-		if (canSummonEarth)
-		{
-			Debug.Log("Hit");
-			summonEarth.ActivateAbility();
-		}
-	}
+        if (trigger.GetComponent<Collider>().tag == "boost")
+        {
+            jumpBoost = 3;
+        }
+    }
     #endregion
 }

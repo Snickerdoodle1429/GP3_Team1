@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Earth_Level.unity
     guid: a0d2f06c8168c8e429608cffd8565f46
   - enabled: 1
+    path: Assets/Scenes/Fire_Level.unity
+    guid: a0ead979d1dd9c24cbefda1aa2cacf4c
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 55ba8b05cde054181beb851d811c31e7
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: fc23f5db2917a2e47bd32582ad4da2a6
   m_configObjects: {}

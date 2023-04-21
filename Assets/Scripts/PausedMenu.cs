@@ -10,7 +10,7 @@ public class PausedMenu : MonoBehaviour
     public AudioSource audioSource;
     public GameObject crosshairs;
 	public GameObject levelSelect;
-
+	public GameObject overallStorage;
 
 	void Start()
     {
@@ -79,7 +79,8 @@ public class PausedMenu : MonoBehaviour
 	public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        isPaused = false;
+		Destroy(overallStorage);
+		isPaused = false;
     }
 
     public void QuitGame()

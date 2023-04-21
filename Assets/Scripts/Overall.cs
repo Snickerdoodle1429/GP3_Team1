@@ -11,6 +11,8 @@ public class Overall : MonoBehaviour
 
 	private void Awake()
 	{
+		DontDestroyOnLoad(gameObject);
+
 		tutorialFinish = false;
 		firstLevel = false;
 		secondLevel = false;

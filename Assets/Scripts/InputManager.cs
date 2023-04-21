@@ -74,7 +74,6 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintingInput();
         HandleJumpingInput();
-        HandleEarthAbility();
         HandlePause();
 	}
     #endregion
@@ -113,18 +112,6 @@ public class InputManager : MonoBehaviour
             animatorManager.animator.SetBool("isJumping", true);
 			jumpKey = false;
 		}
-    }
-    #endregion
-
-    #region Abilities
-    void HandleEarthAbility()
-    {
-        if (earthKey)
-        {
-            Debug.Log("Sent");
-            playerMovement.EarthActivate();
-            earthKey = false;
-        }
     }
     #endregion
 
