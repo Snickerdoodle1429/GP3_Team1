@@ -78,7 +78,7 @@ public class PausedMenu : MonoBehaviour
 	#region Level Select
 	public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menus");
 		Destroy(overallStorage);
 		isPaused = false;
     }
