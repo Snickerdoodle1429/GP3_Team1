@@ -49,8 +49,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     public float playerHeight = 3.6f;
 
-    [Header("Earth Ability")]
+    [Header("Abilities")]
     public bool canSummonEarth;
+    public GameObject respawnPoint;
     #endregion
 
     void Awake()
@@ -65,6 +66,18 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    void Start()
+    {
+        if (overall.tutorialFinish)
+        {
+            if(hubTP != null)
+            {
+                transform.position = hubTP.transform.position;
+
+            }
+        }
     }
 
     #region Movement
@@ -208,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
         if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
         {
             Debug.Log("Respawn");
-            transform.position = checkpoints.respawnPoint.transform.position;
+            transform.position = respawnPoint.transform.position;
         }
 
         if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")

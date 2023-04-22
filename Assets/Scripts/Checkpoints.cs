@@ -18,11 +18,11 @@ public class Checkpoints : MonoBehaviour
 	{
 		if (other.gameObject.GetComponent<Collider>().tag == "Player")
 		{
-			Debug.Log("Spawnpoint: " + transform.position);
+			Debug.Log("Spawnpoint: " + other.transform.position);
 
 			GetComponent<AudioSource>().Play();
 
-			respawnPoint.transform.position = transform.position;
+			respawnPoint.transform.position = other.transform.position;
 			gameObject.SetActive(false);
 		}
 	}

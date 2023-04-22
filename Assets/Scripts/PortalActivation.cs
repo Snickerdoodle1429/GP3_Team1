@@ -9,15 +9,12 @@ public class PortalActivation : MonoBehaviour
 	public GameObject levelTwo;
 	public GameObject levelThree;
 	public GameObject ending;
+	public GameObject door;
+	public GameObject chains;
 
-	private void Update()
+
+	private void Start()
 	{
-		if(overall.tutorialFinish)
-		{
-			Debug.Log("One Activate");
-			levelOne.SetActive(true);
-		}
-
 		if(overall.firstLevel)
 		{
 			Debug.Log("Two Activate");
@@ -34,6 +31,19 @@ public class PortalActivation : MonoBehaviour
 		{
 			Debug.Log("End Activate");
 			ending.SetActive(true);
+			door.SetActive(false);
+			chains.SetActive(false);
+
 		}
 	}
+
+	public void OnCollisionEnter(Collision collision)
+    {
+		if(collision.gameObject.GetComponent<Rigidbody>().tag == "Player")
+        {
+			overall.tutorialFinish = true;
+			Debug.Log("One Activate");
+			levelOne.SetActive(true);
+		}
+    }
 }

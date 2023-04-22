@@ -2932,7 +2932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391147541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -569.751, y: 83.5, z: -473.159}
+  m_LocalPosition: {x: -557.06, y: 84.244, z: -36.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11488,11 +11488,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332365089}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 300, y: 100.000015, z: 5946.8584}
-  m_Center: {x: 0.0009812111, y: 0.00097580574, z: 1595.4784}
+  m_Size: {x: 300, y: 193.51555, z: 10392.492}
+  m_Center: {x: 0.0009813241, y: -46.756805, z: 3818.2935}
 --- !u!1001 &1338239414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17939,6 +17939,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107893966, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068379442, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2802246825934640193, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
       propertyPath: m_Name
       value: Portal
@@ -18022,6 +18030,10 @@ PrefabInstance:
       propertyPath: summonPoint
       value: 
       objectReference: {fileID: 1972196220}
+    - target: {fileID: 907497015, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 391147541}
     - target: {fileID: 907497024, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: respawnPoint
       value: 
