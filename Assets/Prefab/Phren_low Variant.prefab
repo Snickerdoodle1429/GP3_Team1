@@ -486,7 +486,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.1, z: 0.4}
   m_Center: {x: -1.0942963e-10, y: 0.04, z: 8.038811e-11}
---- !u!82 &6397644181147622661
+--- !u!82 &8607470608359672801
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,6 +640,7 @@ MonoBehaviour:
     m_Bits: 128
   playerHeight: 3.6
   canSummonEarth: 0
+  respawnPoint: {fileID: 0}
 --- !u!114 &907497016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +677,8 @@ MonoBehaviour:
   pauseKey: 0
   earthKey: 0
   fireKey: 0
+  footsteps: {fileID: 0}
+  sprintSound: {fileID: 0}
 --- !u!114 &907497018
 MonoBehaviour:
   m_ObjectHideFlags: 0

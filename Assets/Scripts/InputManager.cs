@@ -26,10 +26,12 @@ public class InputManager : MonoBehaviour
 
     public bool earthKey;
 	public bool fireKey;
-	#endregion
 
-	#region Manage
-	private void Awake()
+    public AudioSource audiosource;
+    #endregion
+
+    #region Manage
+    private void Awake()
 	{
         animatorManager = GetComponent<AnimatorManager>();
         pausedMenu = FindObjectOfType<PausedMenu>();

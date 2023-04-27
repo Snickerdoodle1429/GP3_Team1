@@ -8904,10 +8904,6 @@ PrefabInstance:
       propertyPath: startMarkerOne
       value: 
       objectReference: {fileID: 511445617}
-    - target: {fileID: 755205165977277756, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
-      propertyPath: m_TagString
-      value: LoadEnd
-      objectReference: {fileID: 0}
     - target: {fileID: 2802246825934640193, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
       propertyPath: m_Name
       value: Portal USE THIS ONE
@@ -8955,10 +8951,6 @@ PrefabInstance:
     - target: {fileID: 3289954331939081979, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.236
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082296020890842017, guid: 03043fcd106c15a42948aba15067ed90, type: 3}
-      propertyPath: m_Name
-      value: Teleport1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
