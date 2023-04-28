@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class FirePrefab : MonoBehaviour
 {
-    public float life = 1;
+    public float damage = 1;
+	public float startDelay = 2;
+	public float swapDelay = 5;
+	public GameObject fire;
 
-	private void Awake()
+	private void Start()
 	{
-		Destroy(gameObject, life);
-		Debug.Log("Fire Summoned");
+		fire.SetActive(false);
+		Invoke("LightFire", startDelay);
 	}
 
-	private void OnTriggerEnter(Collider collision)
+	private void LightFire()
 	{
-		if (collision.gameObject.GetComponent<Collider>().tag == "firecollide")
-		{
-			if (collision != null)
-			{
-				Debug.Log("Fire Collided");
-				FireActivate fireActivate = collision.GetComponent<FireActivate>();
-				fireActivate.FireActive();
-			}
-		}
+		fire.SetActive(true);
+		Invoke("StopFire", swapDelay);
+	}
+
+	void StopFire()
+    {
+		fire.SetActive(false);
+		Invoke("LightFire", swapDelay);
 	}
 }

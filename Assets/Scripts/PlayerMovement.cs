@@ -165,13 +165,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpsRemaining > 0)
         {
+            if(isSprinting)
+            {
+                isSprinting = false;
+            }
             Debug.Log("Jump Activate");
             isJumping = true;
             jumpsRemaining -= 1;
 
             animatorManager.animator.SetBool("isJumping", true);
 
-            jumpTest.SendJump();
+            //jumpTest.SendJump();
+            playerRigidbody.AddForce(Vector3.up * jumpHeight * 10, ForceMode.Impulse);
+            //cameraRigid.AddForce(Vector3.up * jumpHeight * 10, ForceMode.Impulse);
             Debug.Log("Send Jump");
 
             Invoke("StopJump", 2);
@@ -224,9 +230,20 @@ public class PlayerMovement : MonoBehaviour
             transform.position = respawnPoint.transform.position;
         }
 
+        if (trigger.gameObject.GetComponent<Collider>().tag == "firecollide")
+        {
+            overall.health = overall.health - 1;
+            if (overall.health <= 0)
+            {
+                SceneManager.LoadScene("Lose");
+            }
+        }
+
+        #region Levels
         if (trigger.gameObject.GetComponent<Collider>().tag == "LoadEnd")
         {
             SceneManager.LoadScene("Art Area");
+            overall.health = 3;
 
             if(trigger.gameObject.GetComponent<Collider>().name == "Teleport1")
             {
@@ -274,6 +291,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Teleport");
             transform.position = hubTP.transform.position;
         }
+        #endregion
     }
 
     public void OnTriggerExit(Collider trigger)

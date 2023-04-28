@@ -6,8 +6,11 @@ public class FireActivate : MonoBehaviour
 {
     public GameObject fiyah;
 
-    public void FireActive()
+    void OnTriggerEnter(Collider other)
     {
-        fiyah.SetActive(true);
+        if(other.GetComponent<Rigidbody>().tag == "Player")
+        {
+            fiyah.SetActive(true);
+        }
     }
 }

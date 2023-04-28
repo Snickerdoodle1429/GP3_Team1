@@ -6,8 +6,9 @@ public class EarthMove : MonoBehaviour
 {
     #region Variables
     public float timeElapsed;
-    public float moveDuration = 5;
-    public float moveValue = 10;
+    public float moveDuration = 3;
+    public float moveValue = 3;
+    public int delay = 2;
 
     public bool inPlace;
     Vector3 endPosition;
@@ -24,17 +25,17 @@ public class EarthMove : MonoBehaviour
 
         endPosition = transform.position;
         earthRigid = GetComponent<Rigidbody>();
-        Physics.IgnoreLayerCollision(6, 7);
-        EarthAbility();
-        EarthSound();
-
+        Physics.IgnoreLayerCollision(0, 0, true);
+        Physics.IgnoreLayerCollision(6, 7, true);
+        Invoke("EarthAbility", delay);
     }
 
 	void EarthAbility()
     {
+        EarthSound();
         StopAllCoroutines();
         
-        Vector3 activePostion = endPosition + Vector3.up * moveValue;
+        Vector3 activePostion = endPosition + Vector3.down * moveValue;
         StartCoroutine(MoveEarth(activePostion));
     }
 
@@ -57,12 +58,13 @@ public class EarthMove : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        Invoke("EarthFall", moveDuration);
+        EarthFall();
     }
 
     void EarthFall()
     {
+        EarthSound();
 		StartCoroutine(MoveEarth(endPosition));
-        Destroy(gameObject, moveDuration);
+        Invoke("EarthAbility",moveDuration);
 	}
 }

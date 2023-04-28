@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class maskspin : MonoBehaviour
 {
-    // Update is called once per frame
+    public int spinSpeed = 100;
+
     void Update()
     {
-        transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+        transform.Rotate(0f, spinSpeed * Time.deltaTime, 0f);
     }
 }

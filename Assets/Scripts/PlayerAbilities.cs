@@ -28,19 +28,7 @@ public class PlayerAbilities : MonoBehaviour
 
 	private void Update()
 	{
-		if(inputManager.fireKey)
-		{
-			Debug.Log("Fire Activate");
-			inputManager.fireKey = false;
-			var fire = Instantiate(firePrefab, fireSummonPoint.position, fireSummonPoint.rotation);
-			fire.GetComponent<Rigidbody>().velocity = fireSummonPoint.forward * fireSpeed;
-		}
-
-		if(playerMovement.canSummonEarth && inputManager.earthKey)
-		{
-			Debug.Log("Hit");
-			summonEarth.ActivateAbility();
-		}
+		
 	}
 
 	private void OnTriggerEnter(Collider other)

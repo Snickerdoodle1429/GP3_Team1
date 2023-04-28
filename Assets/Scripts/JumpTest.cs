@@ -6,8 +6,8 @@ public class JumpTest : MonoBehaviour
 {
     #region Variables
     public float timeElapsed;
-    public float moveDuration = 2;
-    public float moveValue = 5;
+    public float moveDuration = 1;
+    public float moveValue = 3;
 
     Rigidbody playerRigid;
     #endregion
@@ -40,7 +40,7 @@ public class JumpTest : MonoBehaviour
 
         while (timeElapsed < moveDuration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / moveDuration);
+            startPosition = Vector3.Lerp(startPosition, targetPosition, timeElapsed / moveDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

@@ -23,7 +23,7 @@ public class Checkpoints : MonoBehaviour
 			GetComponent<AudioSource>().Play();
 
 			respawnPoint.transform.position = other.transform.position;
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
 		}
 	}
 }

@@ -9,6 +9,8 @@ public class Overall : MonoBehaviour
     public bool secondLevel;
     public bool thirdLevel;
 
+	public int health = 3;
+
 	private void Awake()
 	{
 		DontDestroyOnLoad(gameObject);

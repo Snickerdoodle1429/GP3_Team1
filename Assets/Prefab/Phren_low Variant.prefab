@@ -677,8 +677,7 @@ MonoBehaviour:
   pauseKey: 0
   earthKey: 0
   fireKey: 0
-  footsteps: {fileID: 0}
-  sprintSound: {fileID: 0}
+  audiosource: {fileID: 0}
 --- !u!114 &907497018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,8 +735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeElapsed: 0
-  moveDuration: 0.5
-  moveValue: 5
+  moveDuration: 1
+  moveValue: 3
 --- !u!4 &819512538715041073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d998aae1257236e45b6e4e09b98e8bc1, type: 3}
