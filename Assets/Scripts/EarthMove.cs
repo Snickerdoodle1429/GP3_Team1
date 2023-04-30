@@ -16,7 +16,7 @@ public class EarthMove : MonoBehaviour
     public GameObject earthChunk;
     Rigidbody earthRigid;
 
-    public AudioClip EarthPlatform;
+    public AudioClip platform;
     #endregion
 
     private void Start()
@@ -41,7 +41,7 @@ public class EarthMove : MonoBehaviour
 
     void EarthSound()
     {
-        GetComponent<AudioSource>().clip = EarthPlatform;
+        GetComponent<AudioSource>().clip = platform;
         GetComponent<AudioSource>().Play();
     }
 
