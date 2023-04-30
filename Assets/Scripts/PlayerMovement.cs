@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Overall overall;
     AudioSource audioSource;
     public AudioClip pageSound;
+    public AudioClip jumpSound;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -67,8 +68,9 @@ public class PlayerMovement : MonoBehaviour
         checkpoints = GetComponent<Checkpoints>();
         jumpTest = GetComponent<JumpTest>();
 		audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-		Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         trail.SetActive(false);
     }
@@ -169,8 +171,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Jump Recieve");
         trail.SetActive(true);
+        audioSource.clip = jumpSound;
+        audioSource.Play();
 
-		if (isSprinting)
+        if (isSprinting)
 		{
 			isSprinting = false;
 		}
@@ -196,6 +200,8 @@ public class PlayerMovement : MonoBehaviour
     {
         isJumping = false;
         animatorManager.animator.SetBool("isJumping", false);
+        audioSource.clip = jumpSound;
+        audioSource.Stop();
     }
     #endregion
 

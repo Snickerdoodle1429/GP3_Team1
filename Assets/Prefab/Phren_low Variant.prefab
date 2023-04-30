@@ -5315,7 +5315,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5435,6 +5435,7 @@ MonoBehaviour:
   animator: {fileID: 907497014}
   overall: {fileID: 7242233321788773148, guid: fffe97fdc65d540559b974b9e6893281, type: 3}
   pageSound: {fileID: 8300000, guid: 41ea32accb2763c44927a96580e4eff7, type: 3}
+  jumpSound: {fileID: 8300000, guid: 08cf87815674c2e418f07450fbc17654, type: 3}
   playerCapsule: {fileID: 907497020}
   hubTP: {fileID: 0}
   isSprinting: 0
@@ -5494,8 +5495,7 @@ MonoBehaviour:
   sprintKey: 0
   jumpKey: 0
   pauseKey: 0
-  earthKey: 0
-  fireKey: 0
+  skipKey: 0
   audiosource: {fileID: 0}
 --- !u!114 &907497018
 MonoBehaviour:
