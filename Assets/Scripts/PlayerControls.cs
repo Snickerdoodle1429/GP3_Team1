@@ -273,6 +273,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""4dc4c537-5d4b-48a3-a46c-5a657e959a77"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -385,6 +394,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee1c37df-f6aa-4c23-8f7b-14457f8506a9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2938158d-6394-4e7b-9935-6179d58bd3bc"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -402,6 +433,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
         m_PlayerActions_Earth = m_PlayerActions.FindAction("Earth", throwIfNotFound: true);
         m_PlayerActions_Fire = m_PlayerActions.FindAction("Fire", throwIfNotFound: true);
+        m_PlayerActions_Skip = m_PlayerActions.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -507,6 +539,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Pause;
     private readonly InputAction m_PlayerActions_Earth;
     private readonly InputAction m_PlayerActions_Fire;
+    private readonly InputAction m_PlayerActions_Skip;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -516,6 +549,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_PlayerActions_Pause;
         public InputAction @Earth => m_Wrapper.m_PlayerActions_Earth;
         public InputAction @Fire => m_Wrapper.m_PlayerActions_Fire;
+        public InputAction @Skip => m_Wrapper.m_PlayerActions_Skip;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -540,6 +574,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnFire;
+                @Skip.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSkip;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -559,6 +596,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
             }
         }
     }
@@ -575,5 +615,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnEarth(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

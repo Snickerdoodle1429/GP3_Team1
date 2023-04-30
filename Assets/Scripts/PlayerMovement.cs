@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     Checkpoints checkpoints;
     JumpTest jumpTest;
     public Overall overall;
+    AudioSource audioSource;
+    public AudioClip pageSound;
 
     private Vector3 moveDirection;
     Transform cameraObject;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public bool isSprinting;
     public bool isJumping;
+    public GameObject trail;
 
     [Header("Movement Speeds")]
     public float walkingSpeed = 1.5f;
@@ -63,9 +66,11 @@ public class PlayerMovement : MonoBehaviour
         playerCapsule = GetComponent<CapsuleCollider>();
         checkpoints = GetComponent<Checkpoints>();
         jumpTest = GetComponent<JumpTest>();
+		audioSource = GetComponent<AudioSource>();
 
-        Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        trail.SetActive(false);
     }
 
     void Start()
@@ -156,19 +161,22 @@ public class PlayerMovement : MonoBehaviour
             inAirTimer = 0;
             jumpsRemaining = maxJumps;
             animatorManager.animator.SetBool("isJumping", false);
+            trail.SetActive(false);
         }
     }
 
     public void HandleJumping()
     {
         Debug.Log("Jump Recieve");
+        trail.SetActive(true);
 
-        if (jumpsRemaining > 0)
+		if (isSprinting)
+		{
+			isSprinting = false;
+		}
+
+		if (jumpsRemaining > 0)
         {
-            if(isSprinting)
-            {
-                isSprinting = false;
-            }
             Debug.Log("Jump Activate");
             isJumping = true;
             jumpsRemaining -= 1;
@@ -217,14 +225,17 @@ public class PlayerMovement : MonoBehaviour
         if (trigger.GetComponent<Collider>().tag == "boost")
         {
             jumpBoost = boostpad;
+            trail.SetActive(true);
         }
 
         if (trigger.GetComponent<Collider>().tag == "mask")
         {
             trigger.gameObject.SetActive(false);
-        }
+			audioSource.clip = pageSound;
+            audioSource.Play();
+		}
 
-        if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
+		if (trigger.gameObject.GetComponent<Collider>().tag == "ForceRespawn")
         {
             Debug.Log("Respawn");
             transform.position = respawnPoint.transform.position;
@@ -304,6 +315,7 @@ public class PlayerMovement : MonoBehaviour
         if (trigger.GetComponent<Collider>().tag == "boost")
         {
             jumpBoost = 3;
+            trail.SetActive(false);
         }
     }
     #endregion

@@ -23,9 +23,7 @@ public class InputManager : MonoBehaviour
     public bool sprintKey;
     public bool jumpKey;
     public bool pauseKey;
-
-    public bool earthKey;
-	public bool fireKey;
+    public bool skipKey;
 
     public AudioSource audiosource;
     #endregion
@@ -56,11 +54,8 @@ public class InputManager : MonoBehaviour
 			playerControls.PlayerActions.Pause.performed += i => pauseKey = true;
 			playerControls.PlayerActions.Pause.canceled += i => pauseKey = false;
 
-			playerControls.PlayerActions.Earth.performed += i => earthKey = true;
-			playerControls.PlayerActions.Earth.canceled += i => earthKey = false;
-
-			playerControls.PlayerActions.Fire.performed += i => fireKey = true;
-			playerControls.PlayerActions.Fire.canceled += i => fireKey = false;
+			playerControls.PlayerActions.Skip.performed += i => skipKey = true;
+			playerControls.PlayerActions.Skip.canceled += i => skipKey = false;
 		}
 
 		playerControls.Enable();
