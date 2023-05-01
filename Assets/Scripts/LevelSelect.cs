@@ -7,7 +7,7 @@ public class LevelSelect : MonoBehaviour
 {
 	public GameObject selection;
 	public GameObject overallStorage;
-    public AudioSource audio;
+    public AudioSource audioSource;
 
     void Start()
 	{
@@ -23,48 +23,48 @@ public class LevelSelect : MonoBehaviour
 	{
 		SceneManager.LoadScene("Menus");
 		Destroy(overallStorage);
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void QuitGame()
 	{
 		Application.Quit();
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void Select()
 	{
 		selection.SetActive(true);
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void LoadTutorial()
 	{
 		SceneManager.LoadScene("Art Area");
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void LoadWater()
 	{
 		SceneManager.LoadScene("Water_Level");
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void LoadEarth()
 	{
 		SceneManager.LoadScene("Earth_Level");
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void LoadFire()
 	{
 		SceneManager.LoadScene("Fire_Level");
-        audio.Play();
+        audioSource.Play(0);
     }
 
 	public void ReturnToPause()
 	{
 		selection.SetActive(false);
-        audio.Play();
+        audioSource.Play(0);
     }
 }

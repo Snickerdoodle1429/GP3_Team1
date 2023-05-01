@@ -188,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
             animatorManager.animator.SetBool("isJumping", true);
 
             //jumpTest.SendJump();
-            playerRigidbody.AddForce(Vector3.up * jumpHeight * 10, ForceMode.Impulse);
+            playerRigidbody.AddForce(Vector3.up * jumpHeight * 10 * jumpBoost, ForceMode.Impulse);
             //cameraRigid.AddForce(Vector3.up * jumpHeight * 10, ForceMode.Impulse);
             Debug.Log("Send Jump");
 
@@ -293,9 +293,9 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Fire_Level");
         }
 
-        if (trigger.gameObject.GetComponent<Collider>().tag == "Win")
+        if (trigger.gameObject.GetComponent<Collider>().tag == "CloseScene")
         {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("CloseScene");
         }
 
         if (trigger.gameObject.GetComponent<Collider>().tag == "Lose")

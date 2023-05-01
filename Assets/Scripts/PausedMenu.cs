@@ -10,7 +10,8 @@ public class PausedMenu : MonoBehaviour
     public AudioSource audioSource;
     public GameObject crosshairs;
 	public GameObject levelSelect;
-	public GameObject overallStorage;
+    public GameObject controlsScreen;
+    public GameObject overallStorage;
 
 	void Start()
     {
@@ -81,43 +82,59 @@ public class PausedMenu : MonoBehaviour
         SceneManager.LoadScene("Menus");
 		Destroy(overallStorage);
 		isPaused = false;
+
+        audioSource.Play(0);
     }
 
+    public void OpenControls()
+    {
+        audioSource.Play(0);
+        controlsScreen.SetActive(true);
+    }
     public void QuitGame()
     {
         Application.Quit();
+
+        audioSource.Play(0);
     }
 
 	public void LevelSelect()
 	{
 		levelSelect.SetActive(true);
 		pausedMenu.SetActive(false);
-	}
+        audioSource.Play(0);
+    }
 
 	public void LoadTutorial()
 	{
 		SceneManager.LoadScene("Art Area");
-	}
+        audioSource.Play(0);
+    }
 
 	public void LoadWater()
 	{
 		SceneManager.LoadScene("Water_Level");
-	}
+        audioSource.Play(0);
+    }
 
 	public void LoadEarth()
 	{
 		SceneManager.LoadScene("Earth_Level");
-	}
+        audioSource.Play(0);
+    }
 
 	public void LoadFire()
 	{
 		SceneManager.LoadScene("Fire_Level");
-	}
+        audioSource.Play(0);
+    }
 
 	public void ReturnToPause()
 	{
 		levelSelect.SetActive(false);
-		pausedMenu.SetActive(true);
-	}
+        controlsScreen.SetActive(false);
+        pausedMenu.SetActive(true);
+        audioSource.Play(0);
+    }
 	#endregion
 }

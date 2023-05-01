@@ -5445,12 +5445,12 @@ MonoBehaviour:
   runningSpeed: 2
   sprintingSpeed: 5
   rotationSpeed: 30
-  jumpHeight: 10
+  jumpHeight: 5
   gravityIntensity: -5
   maxJumps: 3
   jumpsRemaining: 0
   jumpBoost: 3
-  boostpad: 25
+  boostpad: 18
   inAirTimer: 0
   leapingVelocity: 20
   fallingSpeed: 200
