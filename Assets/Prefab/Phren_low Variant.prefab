@@ -5450,10 +5450,10 @@ MonoBehaviour:
   maxJumps: 3
   jumpsRemaining: 0
   jumpBoost: 3
-  boostpad: 18
+  boostpad: 12
   inAirTimer: 0
   leapingVelocity: 20
-  fallingSpeed: 200
+  fallingSpeed: 100
   isGrounded: 0
   whatIsGround:
     serializedVersion: 2

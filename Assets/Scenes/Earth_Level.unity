@@ -22385,10 +22385,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1972196220}
     - target: {fileID: 907497015, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
-      propertyPath: fallingSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 907497015, guid: 7666b966d04cc45748d5e9087e204353, type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 391147541}
