@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
         checkpoints = GetComponent<Checkpoints>();
         jumpTest = GetComponent<JumpTest>();
 		audioSource = GetComponent<AudioSource>();
-        audioSource = GetComponent<AudioSource>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -82,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
             if(hubTP != null)
             {
                 transform.position = hubTP.transform.position;
-
             }
         }
     }

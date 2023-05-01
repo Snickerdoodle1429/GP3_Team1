@@ -5,13 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Choice : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void Cooperate()
     {
-        SceneManager.LoadScene("Lose");
+        SceneManager.LoadScene("Cooperate");
     }
 
 	public void Flee()
 	{
-		SceneManager.LoadScene("Win");
+		SceneManager.LoadScene("Flee");
 	}
 }

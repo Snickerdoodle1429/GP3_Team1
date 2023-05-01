@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         audio.Play();
-        SceneManager.LoadScene("Art Area");
+        SceneManager.LoadScene("OpenScene");
     }
 
     public void QuitGame()

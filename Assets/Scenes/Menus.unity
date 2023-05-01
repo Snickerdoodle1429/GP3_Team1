@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selection: {fileID: 403980501}
   overallStorage: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &403980504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selection: {fileID: 403980501}
   overallStorage: {fileID: 7242233321386034799}
-  audio: {fileID: 985052973}
+  audioSource: {fileID: 0}
 --- !u!114 &732836255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4944,9 +4944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbedf9d5dfc449f786d91d1c6960cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selection: {fileID: 0}
-  overallStorage: {fileID: 0}
-  audio: {fileID: 985052973}
+  selection: {fileID: 403980501}
+  overallStorage: {fileID: 7242233321386034799}
+  audioSource: {fileID: 985052973}
 --- !u!1 &974772161
 GameObject:
   m_ObjectHideFlags: 0
