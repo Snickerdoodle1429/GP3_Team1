@@ -296,9 +296,14 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("CloseScene");
         }
 
+        if (trigger.gameObject.GetComponent<Collider>().tag == "Win")
+        {
+            SceneManager.LoadScene("Flee");
+        }
+
         if (trigger.gameObject.GetComponent<Collider>().tag == "Lose")
         {
-            SceneManager.LoadScene("Lose");
+            SceneManager.LoadScene("Cooperate");
         }
 
         if (trigger.gameObject.GetComponent<Collider>().tag == "Finish")
