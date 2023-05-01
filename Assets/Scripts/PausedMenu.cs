@@ -8,7 +8,6 @@ public class PausedMenu : MonoBehaviour
     public GameObject pausedMenu;
     public static bool isPaused;
     public AudioSource audioSource;
-    public GameObject crosshairs;
 	public GameObject levelSelect;
     public GameObject controlsScreen;
     public GameObject overallStorage;
@@ -24,7 +23,6 @@ public class PausedMenu : MonoBehaviour
 		levelSelect.SetActive(false);
 		isPaused = false;
 		Time.timeScale = 1f;
-		crosshairs.SetActive(true);
 	}
 
 	#region Pause
@@ -54,7 +52,6 @@ public class PausedMenu : MonoBehaviour
 
         Time.timeScale = 0f;
         isPaused = true;
-        crosshairs.SetActive(false);
 
         PlayerMovement controller = GetComponent<PlayerMovement>();
         audioSource.Pause();
@@ -70,7 +67,6 @@ public class PausedMenu : MonoBehaviour
 		levelSelect.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        crosshairs.SetActive(true);
 
         audioSource.Play(0);
     }
